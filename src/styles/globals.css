@@ -117,7 +117,7 @@ h4 {
   }
 
   .card-product {
-    @apply bg-white border border-brand-fog overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group;
+    @apply bg-white border border-brand-fog overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
 
   /* Nav link */

@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Barlow Condensed", serif;
+  --font-body: "Barlow", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* Brand colors */
+  --color-black: #0d0d0d;
+  --color-charcoal: #1a1a1a;
+  --color-steel: #2c2c2c;
+  --color-iron: #444444;
+  --color-silver: #8a8a8a;
+  --color-fog: #c8c8c8;
+  --color-white: #f5f4f0;
+  --color-amber: #c8831a;
+  --color-amber-light: #e09b2a;
+  --color-earth: #6b5a3e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography ───────────────────────────── */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+/* ── Utilities ────────────────────────────── */
+@layer utilities {
+  .text-display {
+    font-family: var(--font-display);
+  }
+
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-20;
+  }
+
+  .section-gap {
+    @apply py-20 md:py-28;
+  }
+
+  /* Yellow accent underline */
+  .accent-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .accent-underline::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: var(--color-amber);
+    z-index: -1;
+  }
+
+  /* Thick rule divider */
+  .rule-amber {
+    border: none;
+    height: 3px;
+    background: var(--color-amber);
+  }
+
+  /* Grain texture overlay */
+  .grain-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/grain.png");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* ── Component Layer ──────────────────────── */
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-brand-amber text-white font-display font-700 uppercase tracking-wider px-8 py-4 text-sm transition-all duration-200 hover:bg-brand-amber-light active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border-2 border-brand-black text-brand-black font-display font-700 uppercase tracking-wider px-8 py-4 text-sm transition-all duration-200 hover:bg-brand-black hover:text-brand-white active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-brand-white font-display font-700 uppercase tracking-wider text-sm transition-all duration-200 hover:text-brand-amber underline-offset-4 hover:underline;
+  }
+
+  /* Cards */
+  .card-service {
+    @apply bg-white border border-brand-fog p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .card-product {
+    @apply bg-white border border-brand-fog overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group;
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply text-sm font-display font-600 uppercase tracking-widest text-brand-black transition-colors duration-200 hover:text-brand-amber;
+  }
+
+  /* Section label */
+  .section-label {
+    @apply text-xs font-mono uppercase tracking-[0.3em] text-brand-amber mb-4 block;
+  }
+
+  /* Input fields */
+  .input-field {
+    @apply w-full border border-brand-fog bg-white px-4 py-3 font-body text-brand-black placeholder:text-brand-silver focus:border-brand-amber focus:outline-none transition-colors duration-200;
+  }
+}

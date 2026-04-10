@@ -18,12 +18,12 @@ const SHOP_LINKS = [
 ];
 
 const SERVICE_AREAS = [
-  "Vancouver, WA",
-  "Camas, WA",
-  "Washougal, WA",
-  "Battle Ground, WA",
-  "Ridgefield, WA",
-  "La Center, WA",
+  "Poulsbo, WA",
+  "Bremerton, WA",
+  "Silverdale, WA",
+  "Kingston, WA",
+  "Bainbridge Island, WA",
+  "Port Orchard, WA",
 ];
 
 export function Footer() {
@@ -66,8 +66,8 @@ export function Footer() {
             Infinity<span className="text-brand-amber"> Fencing</span> NW
           </p>
           <p className="text-sm text-brand-silver leading-relaxed mb-6">
-            Veteran-owned fence contractor serving Vancouver WA and SW
-            Washington. Quality work, honest pricing, and craftsmanship you can
+            Veteran-owned fence contractor serving Poulsbo WA and the
+            Kitsap Peninsula. Quality work, honest pricing, and craftsmanship you can
             count on.
           </p>
           <div className="flex gap-3">
@@ -170,7 +170,7 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-3 text-brand-fog">
               <MapPin size={16} className="text-brand-amber mt-0.5 shrink-0" />
-              <span>Vancouver, WA & SW Washington</span>
+              <span>Poulsbo, WA & Kitsap Peninsula</span>
             </li>
           </ul>
         </div>

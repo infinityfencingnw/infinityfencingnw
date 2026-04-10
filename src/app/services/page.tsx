@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Fence Services – Wood, Chain Link, Vinyl & More | Infinity Fencing NW",
   description:
-    "Infinity Fencing NW offers wood, chain link, vinyl, security, commercial, and temporary fence installation in Vancouver WA & SW Washington. Free estimates.",
+    "Infinity Fencing NW offers wood, chain link, vinyl, security, commercial, and temporary fence installation in Poulsbo WA & Kitsap Peninsula. Free estimates.",
 };
 
 const SERVICES = [
@@ -78,7 +78,7 @@ const SERVICES = [
     slug: "commercial",
     label: "Commercial Fencing",
     headline: "Built for Business",
-    desc: `We serve commercial, industrial, and government clients throughout Clark County with fencing solutions designed to handle the demands of high-traffic, high-stakes environments. From warehouse perimeters to government facilities, we understand the compliance and durability requirements of commercial work.`,
+    desc: `We serve commercial, industrial, and government clients throughout Kitsap County with fencing solutions designed to handle the demands of high-traffic, high-stakes environments. From warehouse perimeters to government facilities, we understand the compliance and durability requirements of commercial work.`,
     bullets: [
       "Large-scale project experience",
       "Government and industrial specs met",
@@ -150,7 +150,7 @@ export default function ServicesPage() {
               >
                 <Image
                   src={service.image}
-                  alt={`${service.label} installation in Vancouver WA`}
+                  alt={`${service.label} installation in Poulsbo WA`}
                   fill
                   className="object-cover"
                 />

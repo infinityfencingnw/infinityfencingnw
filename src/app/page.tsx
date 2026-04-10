@@ -12,9 +12,9 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "Fence Installation Vancouver WA | Infinity Fencing NW – Licensed & Insured",
+    "Fence Installation Poulsbo WA | Infinity Fencing NW – Licensed & Insured",
   description:
-    "Veteran-owned fence contractor serving Vancouver WA & Clark County. Wood, chain link, vinyl, security & commercial fencing. Free estimates. Call 360.200.1005.",
+    "Veteran-owned fence contractor serving Poulsbo WA & Kitsap County. Wood, chain link, vinyl, security & commercial fencing. Free estimates. Call 360.200.1005.",
 };
 
 const SERVICES = [
@@ -73,7 +73,7 @@ const TRUST_ITEMS = [
   "Veteran Owned",
   "Free Estimates",
   "Quality Materials",
-  "Clark County & SW WA",
+  "Kitsap County & NW WA",
   "Satisfaction Guaranteed",
 ];
 
@@ -103,14 +103,14 @@ export default function HomePage() {
 
         <div className="relative z-10 section-padding w-full">
           <div className="max-w-5xl">
-            <span className="section-label">Vancouver, WA & SW Washington</span>
+            <span className="section-label">Poulsbo, WA & Kitsap Peninsula</span>
             <h1 className="text-[clamp(3.5rem,10vw,8rem)] font-display font-900 uppercase text-brand-white leading-none mb-6">
               Nice Fences.
               <br />
               <span className="text-brand-amber">Nice People.</span>
             </h1>
             <p className="text-brand-fog text-lg md:text-xl max-w-xl mb-10 font-body font-300 leading-relaxed">
-              Veteran-owned fence contractor serving Clark County. Licensed,
+              Veteran-owned fence contractor serving Kitsap Peninsula. Licensed,
               insured, and built on doing the job right — the first time.
             </p>
 
@@ -250,7 +250,7 @@ export default function HomePage() {
                 "Fully licensed, bonded, and insured in Washington State",
                 "Transparent pricing — no hidden fees, ever",
                 "We stand behind our work with real warranties",
-                "Local to Clark County — we know the terrain and codes",
+                "Local to Kitsap County — we know the terrain and codes",
               ].map((item) => (
                 <li
                   key={item}
@@ -413,20 +413,20 @@ export default function HomePage() {
             {[
               {
                 name: "Jason M.",
-                location: "Vancouver, WA",
+                location: "Poulsbo, WA",
                 text: "Incredibly professional crew. They showed up when they said they would, finished on time, and the fence looks amazing. Will absolutely use them again.",
                 stars: 5,
               },
               {
                 name: "Sarah K.",
-                location: "Camas, WA",
+                location: "Bremerton, WA",
                 text: "The metal post + wood combination they recommended is exactly what we needed. Three years later and it still looks brand new. Worth every penny.",
                 stars: 5,
               },
               {
                 name: "Mike R.",
-                location: "Battle Ground, WA",
-                text: "Veteran owned and it shows — they take real pride in their work. Quick estimate, fair price, solid installation. Highly recommend to anyone in Clark County.",
+                location: "Silverdale, WA",
+                text: "Veteran owned and it shows — they take real pride in their work. Quick estimate, fair price, solid installation. Highly recommend to anyone in Kitsap County.",
                 stars: 5,
               },
             ].map((review) => (
@@ -465,14 +465,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <span className="section-label">Service Area</span>
           <h2 className="text-3xl font-display font-900 uppercase text-brand-black mb-4">
-            Serving SW Washington
+            Serving Kitsap Peninsula
           </h2>
           <p className="text-brand-iron text-sm max-w-2xl leading-relaxed mb-6">
             Infinity Fencing NW provides professional fence installation
-            throughout Clark County and SW Washington — including{" "}
-            <strong>Vancouver</strong>, <strong>Camas</strong>,{" "}
-            <strong>Washougal</strong>, <strong>Battle Ground</strong>,{" "}
-            <strong>Ridgefield</strong>, and <strong>La Center</strong>. Contact
+            throughout Kitsap County and NW Washington — including{" "}
+            <strong>Poulsbo</strong>, <strong>Bremerton</strong>,{" "}
+            <strong>Silverdale</strong>, <strong>Kingston</strong>,{" "}
+            <strong>Bainbridge Island</strong>, and <strong>Port Orchard</strong>. Contact
             us if you're unsure whether we serve your area.
           </p>
           <Link href="/contact" className="btn-secondary">

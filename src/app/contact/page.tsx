@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Free Fence Estimate – Contact Infinity Fencing NW | Vancouver WA",
+  title: "Free Fence Estimate – Contact Infinity Fencing NW | Poulsbo WA",
   description:
-    "Get a free fence installation estimate from Infinity Fencing NW. Serving Vancouver WA, Clark County & SW Washington. Call 360.200.1005 or fill out our quick form.",
+    "Get a free fence installation estimate from Infinity Fencing NW. Serving Poulsbo WA, Kitsap County & NW Washington. Call 360.200.1005 or fill out our quick form.",
 };
 
 export default function ContactPage() {
@@ -105,7 +105,7 @@ export default function ContactPage() {
                   type="text"
                   name="location"
                   className="input-field"
-                  placeholder="Vancouver, WA or 98660"
+                  placeholder="Poulsbo, WA or 98370"
                 />
               </div>
 
@@ -222,11 +222,11 @@ export default function ContactPage() {
                       Service Area
                     </p>
                     <p className="font-body text-brand-black text-sm leading-relaxed">
-                      Vancouver · Camas · Washougal
+                      Poulsbo · Bremerton · Silverdale
                       <br />
-                      Battle Ground · Ridgefield · La Center
+                      Kingston · Bainbridge Island · Port Orchard
                       <br />
-                      Clark County & SW Washington
+                      Kitsap County & NW Washington
                     </p>
                   </div>
                 </li>

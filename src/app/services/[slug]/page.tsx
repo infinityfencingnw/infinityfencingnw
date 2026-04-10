@@ -24,11 +24,11 @@ const SERVICES: Record<
     metaTitle:
       "Wood Fence Installation Vancouver WA | Infinity Fencing NW",
     metaDescription:
-      "Expert wood fence installation in Vancouver WA and Clark County. Our specialty: wood fencing on lifetime metal posts. Cedar, pine, all styles. Free estimates.",
+      "Expert wood fence installation in Poulsbo WA and Kitsap County. Our specialty: wood fencing on lifetime metal posts. Cedar, pine, all styles. Free estimates.",
     badge: "Our Specialty",
     headline: "Wood Beauty. Metal Strength.",
     intro:
-      "Wood fencing is the most requested style in Clark County — and for good reason. It's classic, versatile, and can be built to any height, style, or configuration. We take it further with our signature metal post system that eliminates the #1 cause of wood fence failure: post rot.",
+      "Wood fencing is the most requested style in Kitsap County — and for good reason. It's classic, versatile, and can be built to any height, style, or configuration. We take it further with our signature metal post system that eliminates the #1 cause of wood fence failure: post rot.",
     details: [
       "Traditional wood posts are the weak link in any wood fence. They absorb moisture, begin to rot from the bottom up, and typically fail within 7–12 years in the Pacific Northwest's wet climate.",
       "Our solution: set every fence on lifetime galvanized steel posts, anchored in concrete. The wood panels attach to the posts and can be replaced if they ever weather out — but the structural foundation stays solid indefinitely.",
@@ -41,12 +41,12 @@ const SERVICES: Record<
       "Custom gate fabrication to match",
       "Traditional wood posts available on request",
       "Staining and sealing services",
-      "Clark County permit handling included if required",
+      "Kitsap County permit handling included if required",
     ],
     faq: [
       {
         q: "How long does a wood fence last on metal posts vs. wood posts?",
-        a: "Wood posts in SW Washington typically last 8–12 years before rotting at the base. Our lifetime metal posts won't rot, heave, or lean — they're designed to outlast the wood panels themselves.",
+        a: "Wood posts in NW Washington typically last 8–12 years before rotting at the base. Our lifetime metal posts won't rot, heave, or lean — they're designed to outlast the wood panels themselves.",
       },
       {
         q: "What wood species do you use?",
@@ -57,7 +57,7 @@ const SERVICES: Record<
         a: "Yes. Bring us a photo or description and we'll match the style, height, and spacing as closely as possible.",
       },
       {
-        q: "Do I need a permit for a wood fence in Clark County?",
+        q: "Do I need a permit for a wood fence in Kitsap County?",
         a: "Most standard residential wood fences (under 6ft in side/back yard) don't require a permit. We'll flag any requirements during your estimate and handle the application if needed.",
       },
     ],
@@ -69,7 +69,7 @@ const SERVICES: Record<
     metaTitle:
       "Chain Link Fence Installation Vancouver WA | Infinity Fencing NW",
     metaDescription:
-      "Professional chain link fence installation in Vancouver WA and Clark County. Galvanized and vinyl-coated options, residential and commercial. Free estimates.",
+      "Professional chain link fence installation in Poulsbo WA and Kitsap County. Galvanized and vinyl-coated options, residential and commercial. Free estimates.",
     badge: "Affordable & Durable",
     headline: "Built Tough. Built to Last.",
     intro:
@@ -110,13 +110,13 @@ const SERVICES: Record<
     metaTitle:
       "Vinyl Fence Installation Vancouver WA | Infinity Fencing NW",
     metaDescription:
-      "Vinyl and PVC fence installation in Vancouver WA and Clark County. No painting, no rot, no maintenance. Privacy, picket, and ornamental styles. Free estimates.",
+      "Vinyl and PVC fence installation in Poulsbo WA and Kitsap County. No painting, no rot, no maintenance. Privacy, picket, and ornamental styles. Free estimates.",
     badge: "Low Maintenance",
     headline: "Clean Look. Zero Upkeep.",
     intro:
       "Vinyl fencing gives you the look of a freshly painted wood fence — permanently. No painting, no staining, no rot, and no annual maintenance beyond an occasional rinse. It's the low-effort, high-curb-appeal choice.",
     details: [
-      "Vinyl and PVC are engineered to resist moisture, UV degradation, pest damage, and temperature swings — all common challenges in SW Washington. The material won't warp, crack, or fade like wood can.",
+      "Vinyl and PVC are engineered to resist moisture, UV degradation, pest damage, and temperature swings — all common challenges in NW Washington. The material won't warp, crack, or fade like wood can.",
       "We offer privacy panels, picket styles, three-rail ranch fences, and ornamental designs in white, tan, gray, and other colors. Many styles are HOA-compliant and popular in newer subdivisions.",
       "Composite fencing — a blend of wood fiber and PVC — is also available and offers a more natural wood-grain appearance while retaining the maintenance benefits of vinyl.",
     ],
@@ -150,7 +150,7 @@ const SERVICES: Record<
     title: "Security Fencing",
     metaTitle: "Security Fence Installation Vancouver WA | Infinity Fencing NW",
     metaDescription:
-      "High-strength security fencing for commercial, industrial, and residential properties in Vancouver WA and Clark County. Custom solutions. Free estimates.",
+      "High-strength security fencing for commercial, industrial, and residential properties in Poulsbo WA and Kitsap County. Custom solutions. Free estimates.",
     badge: "High Security",
     headline: "Perimeter Protection That Works.",
     intro:
@@ -186,11 +186,11 @@ const SERVICES: Record<
     metaTitle:
       "Commercial Fence Contractor Vancouver WA | Infinity Fencing NW",
     metaDescription:
-      "Commercial and government fence installation in Vancouver WA and Clark County. Experienced with large-scale projects, government specs, and commercial requirements.",
+      "Commercial and government fence installation in Poulsbo WA and Kitsap County. Experienced with large-scale projects, government specs, and commercial requirements.",
     badge: "Commercial Grade",
     headline: "Built for Business.",
     intro:
-      "Commercial fencing projects require a different level of planning, coordination, and compliance than residential work. We've handled everything from warehouse perimeters to government facility fencing in Clark County.",
+      "Commercial fencing projects require a different level of planning, coordination, and compliance than residential work. We've handled everything from warehouse perimeters to government facility fencing in Kitsap County.",
     details: [
       "We understand commercial timelines, permit processes, and the need to minimize disruption to ongoing operations. We coordinate closely with project managers and GCs to deliver on schedule.",
       "Our commercial clients include distribution centers, retail properties, schools, municipalities, and government contractors. We're comfortable with prevailing wage work and bonded project requirements.",
@@ -207,7 +207,7 @@ const SERVICES: Record<
     faq: [
       {
         q: "Are you experienced with government fencing contracts?",
-        a: "Yes. We've completed fencing work on government and municipal properties in Clark County and understand the compliance, documentation, and inspection requirements involved.",
+        a: "Yes. We've completed fencing work on government and municipal properties in Kitsap County and understand the compliance, documentation, and inspection requirements involved.",
       },
       {
         q: "Can you handle multi-phase projects?",
@@ -222,11 +222,11 @@ const SERVICES: Record<
     metaTitle:
       "Temporary Fence Rental Vancouver WA | Infinity Fencing NW",
     metaDescription:
-      "Temporary fence installation and rental in Vancouver WA and Clark County. Construction sites, events, emergency needs. Fast deployment. Call 360.200.1005.",
+      "Temporary fence installation and rental in Poulsbo WA and Kitsap County. Construction sites, events, emergency needs. Fast deployment. Call 360.200.1005.",
     badge: "Fast Deployment",
     headline: "Up Fast. Down Easy.",
     intro:
-      "Temporary fencing protects people, property, and job sites without a permanent footprint. We offer fast deployment for construction sites, public events, utility work, and emergency situations throughout Clark County.",
+      "Temporary fencing protects people, property, and job sites without a permanent footprint. We offer fast deployment for construction sites, public events, utility work, and emergency situations throughout Kitsap County.",
     details: [
       "Our temporary fence systems use chain-link panels on weighted or staked bases that can be installed in hours and relocated as your project evolves — no concrete, no digging.",
       "We offer both rental and purchase options. For longer-term construction projects, rental packages include installation, periodic inspections, and takedown.",
@@ -308,13 +308,8 @@ export default function ServicePage({
               name: "Infinity Fencing NW LLC",
               url: "https://www.infinityfencingnw.com",
               telephone: "+13602001005",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Vancouver",
-                addressRegion: "WA",
-              },
             },
-            areaServed: "Clark County, WA",
+            areaServed: "Kitsap County, WA",
           }),
         }}
       />

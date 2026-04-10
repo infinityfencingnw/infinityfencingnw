@@ -6,20 +6,20 @@ import { Footer } from "@/components/layout/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.infinityfencingnw.com"),
   title: {
-    default: "Infinity Fencing NW | Fence Installation – Vancouver, WA & SW Washington",
+    default: "Infinity Fencing NW | Fence Installation – Poulsbo, WA & Kitsap Peninsula",
     template: "%s | Infinity Fencing NW",
   },
   description:
-    "Veteran-owned fence contractor serving Vancouver WA, Clark County & SW Washington. Wood, chain link, vinyl, and security fencing. Free estimates. Licensed & insured.",
+    "Veteran-owned fence contractor serving Poulsbo WA, Kitsap County & NW Washington. Wood, chain link, vinyl, and security fencing. Free estimates. Licensed & insured.",
   keywords: [
-    "fence contractor Vancouver WA",
-    "fence installation Clark County",
-    "wood fence Vancouver Washington",
-    "chain link fence installer SW Washington",
+    "fence contractor Poulsbo WA",
+    "fence installation Kitsap County",
+    "wood fence Poulsbo Washington",
+    "chain link fence installer Kitsap Peninsula",
     "vinyl fence contractor",
-    "security fencing Vancouver WA",
-    "commercial fencing Clark County",
-    "temporary fence rental Vancouver WA",
+    "security fencing Poulsbo WA",
+    "commercial fencing Kitsap County",
+    "temporary fence rental Poulsbo WA",
     "veteran owned fence company",
     "metal post wood fence",
   ],
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.infinityfencingnw.com",
     siteName: "Infinity Fencing NW",
-    title: "Infinity Fencing NW | Fence Installation – Vancouver, WA",
+    title: "Infinity Fencing NW | Fence Installation – Poulsbo, WA",
     description:
-      "Veteran-owned fence contractor. Wood, chain link, vinyl & security fencing. Serving Vancouver WA & SW Washington. Free estimates.",
+      "Veteran-owned fence contractor. Wood, chain link, vinyl & security fencing. Serving Poulsbo WA & Kitsap Peninsula. Free estimates.",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Infinity Fencing NW | Fence Contractor Vancouver WA",
+    title: "Infinity Fencing NW | Fence Contractor Poulsbo WA",
     description:
       "Veteran-owned fence contractor. Wood, chain link, vinyl & security fencing. Free estimates.",
     images: ["/images/og-image.jpg"],
@@ -81,20 +81,14 @@ export default function RootLayout({
               "@id": "https://www.infinityfencingnw.com/#business",
               name: "Infinity Fencing NW LLC",
               description:
-                "Veteran-owned fence contractor specializing in wood, chain link, vinyl, and security fencing in Vancouver WA and SW Washington.",
+                "Veteran-owned fence contractor specializing in wood, chain link, vinyl, and security fencing in Poulsbo WA and the Kitsap Peninsula.",
               url: "https://www.infinityfencingnw.com",
               telephone: "+13602001005",
               email: "build@infinityfencingnw.com",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Vancouver",
-                addressRegion: "WA",
-                addressCountry: "US",
-              },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: 45.6387,
-                longitude: -122.6615,
+                latitude: 47.7348,
+                longitude: -122.6488,
               },
               openingHoursSpecification: {
                 "@type": "OpeningHoursSpecification",
@@ -112,13 +106,13 @@ export default function RootLayout({
               },
               priceRange: "$$",
               areaServed: [
-                "Vancouver, WA",
-                "Clark County, WA",
-                "Camas, WA",
-                "Washougal, WA",
-                "Battle Ground, WA",
-                "Ridgefield, WA",
-                "La Center, WA",
+                "Poulsbo, WA",
+                "Kitsap County, WA",
+                "Bremerton, WA",
+                "Silverdale, WA",
+                "Kingston, WA",
+                "Bainbridge Island, WA",
+                "Port Orchard, WA",
               ],
               hasOfferCatalog: {
                 "@type": "OfferCatalog",

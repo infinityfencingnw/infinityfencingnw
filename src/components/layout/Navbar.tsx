@@ -46,7 +46,7 @@ export function Navbar() {
     >
       {/* Top bar */}
       <div className="bg-brand-black text-brand-fog text-xs font-mono py-2 section-padding flex justify-between items-center">
-        <span>Veteran Owned & Operated · Licensed & Insured · Serving SW Washington</span>
+        <span>Veteran Owned & Operated · Licensed & Insured · Serving Kitsap Peninsula</span>
         <a
           href="tel:3602001005"
           className="flex items-center gap-1 text-brand-amber hover:text-brand-amber-light transition-colors"

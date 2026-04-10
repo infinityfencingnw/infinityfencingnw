@@ -59,13 +59,15 @@ export function Navbar() {
       {/* Main nav */}
       <nav className="section-padding flex items-center justify-between h-16 bg-brand-white border-b border-brand-fog">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          {/* Replace src with actual logo path */}
-          <span className="font-display font-900 text-2xl uppercase tracking-tight text-brand-black">
-            Infinity
-            <span className="text-brand-amber"> Fencing</span>
-            <span className="text-brand-iron text-base font-600"> NW</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Infinity Fencing NW"
+            width={200}
+            height={60}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}

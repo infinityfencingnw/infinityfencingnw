@@ -20,7 +20,7 @@ const NAV_LINKS = [
   },
   { label: "Our Work", href: "/gallery" },
   { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
+  { label: "Social", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -57,15 +57,15 @@ export function Navbar() {
       </div>
 
       {/* Main nav */}
-      <nav className="section-padding flex items-center justify-between h-16 bg-brand-white border-b border-brand-fog">
+      <nav className="section-padding flex items-center justify-between h-24 bg-brand-white border-b border-brand-fog">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="Infinity Fencing NW"
-            width={200}
-            height={60}
-            className="h-10 w-auto"
+            width={400}
+            height={120}
+            className="h-20 w-auto"
             priority
           />
         </Link>

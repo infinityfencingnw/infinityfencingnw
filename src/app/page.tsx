@@ -80,7 +80,7 @@ const TRUST_ITEMS = [
 const STATS = [
   { value: "500+", label: "Projects Completed" },
   { value: "5★", label: "Average Rating", href: "https://share.google/CgI9tSklZHsSa0cno" },
-  { value: "10+", label: "Years Experience" },
+  { value: "10+", label: "Years Combined Experience" },
   { value: "100%", label: "Licensed & Insured", href: "https://secure.lni.wa.gov/verify/Detail.aspx?UBI=605601618&LIC=INFINFN764OO&SAW=" },
 ];
 
@@ -96,9 +96,9 @@ export default function HomePage() {
             alt="Fence installation in Poulsbo WA"
             fill
             priority
-            className="object-cover opacity-40"
+            className="object-cover opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-brand-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-brand-black/20 to-transparent" />
         </div>
 
         <div className="relative z-10 section-padding w-full">

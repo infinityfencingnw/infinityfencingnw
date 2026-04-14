@@ -146,40 +146,45 @@ const SERVICES: Record<
     image:
       "https://images.pexels.com/photos/11693890/pexels-photo-11693890.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
-  security: {
-    title: "Security Fencing",
-    metaTitle: "Security Fence Installation Vancouver WA | Infinity Fencing NW",
+  gates: {
+    title: "Gates",
+    metaTitle: "Gate Installation Poulsbo WA – Automated, Wood & Metal | Infinity Fencing NW",
     metaDescription:
-      "High-strength security fencing for commercial, industrial, and residential properties in Poulsbo WA and Kitsap County. Custom solutions. Free estimates.",
-    badge: "High Security",
-    headline: "Perimeter Protection That Works.",
+      "Custom gate installation in Poulsbo WA and Kitsap County. Automated, cantilever, fabricated steel, wood swing gates and more. Built to match your fence. Free estimates.",
+    badge: "Custom Built",
+    headline: "Every Gate Style, Custom Built.",
     intro:
-      "Security fencing is about more than height — it's about deterrence, access control, and structural integrity under real-world conditions. We design and install security fencing solutions for properties that need more than a standard residential fence.",
+      "A fence is only as good as its gate. We design, fabricate, and install every type of gate — from a simple wood swing gate to a fully automated driveway system with keypad or remote access. Every gate is built to match your fence and your property.",
     details: [
-      "Our security fencing options include welded wire mesh, palisade fencing, anti-climb configurations, and heavy-gauge chain link systems designed to resist cutting and scaling.",
-      "We work with property managers, business owners, municipalities, and homeowners who need serious perimeter protection. Every install is engineered to the specific site conditions and security requirements.",
+      "We work with wood, steel, aluminum, and vinyl to build gates in any configuration. Swing gates, slide gates, cantilever gates, bi-parting gates — we've built them all across Kitsap County.",
+      "For automated gates, we partner with top gate operator brands to install reliable motorized systems with remote controls, keypads, loop detectors, and access control integration. We handle the full install from the post to the operator.",
     ],
     bullets: [
-      "Welded wire mesh and palisade options",
-      "Anti-climb and anti-cut configurations",
-      "Heights up to 14ft and beyond",
-      "Barbed wire and razor wire toppers",
-      "Vehicle barrier integration",
-      "Access control gate coordination",
-      "Site assessment included in estimate",
+      "Automated & motorized gate operators",
+      "Cantilever sliding gates",
+      "Fabricated steel & iron entry gates",
+      "Custom wood swing & slide gates",
+      "Aluminum ornamental gate systems",
+      "Vinyl gate panels to match fence",
+      "Single & double driveway configurations",
+      "Keypad, remote & loop detector access",
     ],
     faq: [
       {
-        q: "What's the most secure fence type for a commercial property?",
-        a: "It depends on the threat level. For most commercial properties, a welded wire mesh or heavy-gauge chain link with a barbed wire topper is highly effective. For higher-security applications, palisade steel fencing is the next level up.",
+        q: "Can you automate an existing gate?",
+        a: "In many cases yes — if the existing gate is structurally sound and the opening is compatible with an operator, we can add automation without replacing the gate itself.",
       },
       {
-        q: "Can you integrate the fence with our existing access control system?",
-        a: "We can work alongside your access control provider to ensure gate placements, post locations, and conduit runs are coordinated properly.",
+        q: "What gate types work best for driveways?",
+        a: "It depends on your driveway width, grade, and how much space you have on each side. Cantilever slide gates work great on flat ground with side clearance. Swing gates need room to open. We'll assess your site during the estimate and recommend the right type.",
+      },
+      {
+        q: "Do you fabricate custom metal gates?",
+        a: "Yes. We can fabricate steel and iron gates to custom dimensions and designs — including decorative elements, arches, and powder-coat finishes.",
       },
     ],
     image:
-      "https://images.pexels.com/photos/5860835/pexels-photo-5860835.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/48246/pexels-photo-48246.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
   commercial: {
     title: "Commercial Fencing",

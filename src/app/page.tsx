@@ -24,7 +24,10 @@ const SERVICES = [
     tagline: "Our Specialty",
     desc: "Classic wood beauty on lifetime metal posts for unmatched strength and longevity. Every style available.",
     href: "/services/wood-fencing",
-    icon: "🪵",
+    images: [
+      "https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/14306688/pexels-photo-14306688.jpeg?auto=compress&cs=tinysrgb&w=600",
+    ],
   },
   {
     id: "chain-link",
@@ -32,7 +35,10 @@ const SERVICES = [
     tagline: "Durable & Affordable",
     desc: "Galvanized or vinyl-coated. Ideal for residential and commercial security with clear sightlines.",
     href: "/services/chain-link",
-    icon: "⛓️",
+    images: [
+      "https://images.pexels.com/photos/2381712/pexels-photo-2381712.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/5860835/pexels-photo-5860835.jpeg?auto=compress&cs=tinysrgb&w=600",
+    ],
   },
   {
     id: "vinyl",
@@ -40,15 +46,19 @@ const SERVICES = [
     tagline: "Low Maintenance",
     desc: "Modern clean lines that resist fading, cracking, and pests. No painting, no staining, ever.",
     href: "/services/vinyl-pvc",
-    icon: "🏠",
+    images: [
+      "https://images.pexels.com/photos/11693890/pexels-photo-11693890.jpeg?auto=compress&cs=tinysrgb&w=600",
+    ],
   },
   {
-    id: "security",
-    label: "Security Fencing",
-    tagline: "Commercial Grade",
-    desc: "High-strength fencing solutions for properties that demand serious protection.",
-    href: "/services/security",
-    icon: "🔒",
+    id: "gates",
+    label: "Gates",
+    tagline: "Automated & Custom",
+    desc: "Automated, cantilever, fabricated metal, and wood gates. Custom-built to match your fence and property.",
+    href: "/services/gates",
+    images: [
+      "https://images.pexels.com/photos/48246/pexels-photo-48246.jpeg?auto=compress&cs=tinysrgb&w=600",
+    ],
   },
   {
     id: "commercial",
@@ -56,7 +66,9 @@ const SERVICES = [
     tagline: "Business & Government",
     desc: "Reliable, durable fencing for facilities, government sites, and large-scale projects.",
     href: "/services/commercial",
-    icon: "🏗️",
+    images: [
+      "https://images.pexels.com/photos/683402/pexels-photo-683402.jpeg?auto=compress&cs=tinysrgb&w=600",
+    ],
   },
   {
     id: "temporary",
@@ -64,7 +76,9 @@ const SERVICES = [
     tagline: "Fast Deployment",
     desc: "Construction sites, events, and emergency needs. Quick install and easy relocation.",
     href: "/services/temporary",
-    icon: "⚡",
+    images: [
+      "https://images.pexels.com/photos/951408/pexels-photo-951408.jpeg?auto=compress&cs=tinysrgb&w=600",
+    ],
   },
 ];
 
@@ -204,21 +218,38 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((service) => (
-              <Link key={service.id} href={service.href} className="card-service group block">
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-3xl">{service.icon}</span>
-                  <span className="text-xs font-mono uppercase tracking-widest text-brand-amber bg-brand-amber/10 px-2 py-1">
+              <Link
+                key={service.id}
+                href={service.href}
+                className="group border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden flex flex-col bg-white"
+              >
+                {/* Photos */}
+                <div className={`grid gap-0.5 h-44 overflow-hidden ${service.images.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}>
+                  {service.images.map((src, i) => (
+                    <div key={i} className="relative overflow-hidden">
+                      <Image
+                        src={src}
+                        alt={`${service.label} example`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  ))}
+                </div>
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <span className="text-xs font-mono uppercase tracking-widest text-brand-amber bg-brand-amber/10 px-2 py-1 self-start mb-3">
                     {service.tagline}
                   </span>
-                </div>
-                <h3 className="font-display font-800 text-2xl uppercase text-brand-black mb-3 group-hover:text-brand-amber transition-colors">
-                  {service.label}
-                </h3>
-                <p className="text-brand-iron text-sm leading-relaxed">
-                  {service.desc}
-                </p>
-                <div className="mt-5 flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-brand-amber">
-                  Learn More <ArrowRight size={12} />
+                  <h3 className="font-display font-800 text-2xl uppercase text-brand-black mb-3 group-hover:text-brand-amber transition-colors">
+                    {service.label}
+                  </h3>
+                  <p className="text-brand-iron text-sm leading-relaxed flex-1">
+                    {service.desc}
+                  </p>
+                  <div className="mt-5 flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-brand-amber">
+                    Learn More <ArrowRight size={12} />
+                  </div>
                 </div>
               </Link>
             ))}

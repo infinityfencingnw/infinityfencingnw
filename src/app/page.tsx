@@ -402,10 +402,24 @@ export default function HomePage() {
       {/* ── REVIEWS ──────────────────────────────────── */}
       <section className="section-padding section-gap bg-brand-white">
         <div className="max-w-7xl mx-auto">
-          <span className="section-label">Customer Reviews</span>
-          <h2 className="text-5xl font-display font-900 uppercase text-brand-black mb-12">
-            What Clients Say
-          </h2>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 gap-4">
+            <div>
+              <span className="section-label">Customer Reviews</span>
+              <h2 className="text-5xl font-display font-900 uppercase text-brand-black">
+                What Clients Say
+              </h2>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/Infinity+Fencing+NW+Poulsbo+WA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-brand-amber text-brand-amber font-mono text-xs uppercase tracking-widest px-5 py-3 hover:bg-brand-amber hover:text-white transition-all shrink-0 self-start sm:self-auto mb-8 sm:mb-0"
+            >
+              <Star size={13} className="fill-brand-amber" />
+              Read Our Google Reviews
+            </a>
+          </div>
+          <div className="mb-12" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[

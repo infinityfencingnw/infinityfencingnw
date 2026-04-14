@@ -58,6 +58,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   verification: {
     google: "YOUR_GOOGLE_SEARCH_CONSOLE_TOKEN", // Replace after setup
   },

@@ -441,21 +441,21 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                name: "Jason M.",
-                location: "Poulsbo, WA",
-                text: "Incredibly professional crew. They showed up when they said they would, finished on time, and the fence looks amazing. Will absolutely use them again.",
+                name: "Allison Odenthal",
+                location: "Google Review",
+                text: "Nicest people ever! And amazing craftsmanship! These guys know fences and worked with me on everything. Every interaction was thoughtful and professional. I can't recommend them enough!",
                 stars: 5,
               },
               {
-                name: "Sarah K.",
-                location: "Bremerton, WA",
-                text: "The metal post + wood combination they recommended is exactly what we needed. Three years later and it still looks brand new. Worth every penny.",
+                name: "Shawn Moffat",
+                location: "Google Review",
+                text: "Daniel & Tyler worked hard to quickly install basic mesh border fencing on a very hot day as well as rebuild our deteriorated driveway gate. Great guys with good attitudes. Company charged a very reasonable fee for the work challenges presented. We are very happy with the results. Thank you!",
                 stars: 5,
               },
               {
-                name: "Mike R.",
-                location: "Silverdale, WA",
-                text: "Veteran owned and it shows — they take real pride in their work. Quick estimate, fair price, solid installation. Highly recommend to anyone in Kitsap County.",
+                name: "Quinn Freeman",
+                location: "Google Review",
+                text: "We had fence damage during the recent big wind storms. I called Infinity Fencing and they quickly came out and gave me an estimate. Within a week my fence was fixed. Great work, great service, great team to work with. I highly recommend.",
                 stars: 5,
               },
             ].map((review) => (

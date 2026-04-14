@@ -79,9 +79,9 @@ const TRUST_ITEMS = [
 
 const STATS = [
   { value: "500+", label: "Projects Completed" },
-  { value: "5★", label: "Average Rating" },
+  { value: "5★", label: "Average Rating", href: "https://share.google/CgI9tSklZHsSa0cno" },
   { value: "10+", label: "Years Experience" },
-  { value: "100%", label: "Licensed & Insured" },
+  { value: "100%", label: "Licensed & Insured", href: "https://secure.lni.wa.gov/verify/Detail.aspx?UBI=605601618&LIC=INFINFN764OO&SAW=" },
 ];
 
 export default function HomePage() {
@@ -151,16 +151,33 @@ export default function HomePage() {
       {/* ── STATS BAR ────────────────────────────────── */}
       <section className="bg-brand-amber">
         <div className="section-padding py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {STATS.map((stat) => (
-            <div key={stat.label}>
-              <p className="font-display font-900 text-4xl text-white leading-none">
-                {stat.value}
-              </p>
-              <p className="text-white/70 text-xs font-mono uppercase tracking-widest mt-1">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+          {STATS.map((stat) =>
+            stat.href ? (
+              <a
+                key={stat.label}
+                href={stat.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <p className="font-display font-900 text-4xl text-white leading-none group-hover:text-white/80 transition-colors">
+                  {stat.value}
+                </p>
+                <p className="text-white/70 text-xs font-mono uppercase tracking-widest mt-1 group-hover:text-white/90 transition-colors underline underline-offset-2 decoration-white/30">
+                  {stat.label}
+                </p>
+              </a>
+            ) : (
+              <div key={stat.label}>
+                <p className="font-display font-900 text-4xl text-white leading-none">
+                  {stat.value}
+                </p>
+                <p className="text-white/70 text-xs font-mono uppercase tracking-widest mt-1">
+                  {stat.label}
+                </p>
+              </div>
+            )
+          )}
         </div>
       </section>
 
@@ -410,7 +427,7 @@ export default function HomePage() {
               </h2>
             </div>
             <a
-              href="https://www.google.com/maps/search/Infinity+Fencing+NW+Poulsbo+WA"
+              href="https://share.google/CgI9tSklZHsSa0cno"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-brand-amber text-brand-amber font-mono text-xs uppercase tracking-widest px-5 py-3 hover:bg-brand-amber hover:text-white transition-all shrink-0 self-start sm:self-auto mb-8 sm:mb-0"

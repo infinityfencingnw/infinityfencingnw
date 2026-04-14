@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "About Us – Veteran Owned Fence Contractor | Infinity Fencing NW",
   description:
-    "Infinity Fencing NW is a veteran-owned, licensed & insured fence contractor serving Vancouver WA and Clark County. Learn our story and what sets us apart.",
+    "Infinity Fencing NW is a veteran-owned, licensed & insured fence contractor serving Poulsbo WA and Kitsap County. Learn our story and what sets us apart.",
 };
 
 const VALUES = [
@@ -24,7 +24,7 @@ const VALUES = [
   },
   {
     title: "Community",
-    desc: "We live and work in Clark County. Taking care of our neighbors isn't a tagline — it's how we operate.",
+    desc: "We live and work in Kitsap County. Taking care of our neighbors isn't a tagline — it's how we operate.",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function AboutPage() {
       <section className="relative bg-brand-black pt-32 pb-20 section-padding overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=70"
+            src="https://images.unsplash.com/photo-zL1sJUhNeww?w=1600&q=70"
             alt=""
             fill
             className="object-cover"
@@ -56,8 +56,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative h-[500px] overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80"
-              alt="Infinity Fencing NW owner – veteran fence contractor Vancouver WA"
+              src="https://images.unsplash.com/photo-gyOmQE2vzWs?w=900&q=80"
+              alt="Infinity Fencing NW – veteran owned fence contractor Poulsbo WA"
               fill
               className="object-cover"
             />
@@ -81,7 +81,7 @@ export default function AboutPage() {
                 Infinity Fencing NW was founded by a US veteran who came home
                 and decided to put that same discipline, attention to detail, and
                 commitment to doing things right into building a fencing company
-                Clark County could count on.
+                Kitsap County could count on.
               </p>
               <p>
                 We're not a franchise. We're not a national chain with a
@@ -148,7 +148,7 @@ export default function AboutPage() {
               "Washington State Licensed Contractor",
               "Fully Bonded & Insured",
               "Veteran Owned & Operated",
-              "Clark County Permit-Ready",
+              "Kitsap County Permit-Ready",
               "Residential & Commercial Certified",
               "Free Estimates – No Obligation",
             ].map((item) => (

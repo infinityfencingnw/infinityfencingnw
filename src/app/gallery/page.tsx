@@ -6,79 +6,79 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Fence Installation Gallery – Our Work | Infinity Fencing NW",
   description:
-    "Browse completed fence projects by Infinity Fencing NW in Vancouver WA and Clark County. Wood, chain link, vinyl, and security fencing examples.",
+    "Browse completed fence projects by Infinity Fencing NW in Poulsbo WA and Kitsap County. Wood, chain link, vinyl, and security fencing examples.",
 };
 
 // Replace src values with real project photos
 const GALLERY = [
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80",
-    alt: "Wood privacy fence on metal posts – Vancouver WA",
+    src: "https://images.unsplash.com/photo-MZrcugN3mpE?w=900&q=80",
+    alt: "Wood privacy fence on metal posts – Poulsbo WA",
     type: "Wood Fencing",
-    location: "Vancouver, WA",
+    location: "Poulsbo, WA",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
-    alt: "Chain link fence installation – Clark County",
+    src: "https://images.unsplash.com/photo-r-VUeYK9648?w=600&q=80",
+    alt: "Chain link fence installation – Kitsap County",
     type: "Chain Link",
-    location: "Camas, WA",
+    location: "Bremerton, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    alt: "Vinyl privacy fence – Washougal WA",
+    src: "https://images.unsplash.com/photo-uV-dSJ98q_U?w=600&q=80",
+    alt: "White vinyl privacy fence – Silverdale WA",
     type: "Vinyl Fencing",
-    location: "Washougal, WA",
+    location: "Silverdale, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
-    alt: "Commercial security fence – Vancouver WA",
+    src: "https://images.unsplash.com/photo-BRKeJOdPaAE?w=600&q=80",
+    alt: "Security fence – Kitsap County",
     type: "Security",
-    location: "Vancouver, WA",
+    location: "Bainbridge Island, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    alt: "Board-on-board cedar fence",
+    src: "https://images.unsplash.com/photo-sCH-WMJRdxk?w=600&q=80",
+    alt: "Board-on-board cedar fence – Poulsbo WA",
     type: "Wood Fencing",
-    location: "Battle Ground, WA",
+    location: "Poulsbo, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80",
+    src: "https://images.unsplash.com/photo-zL1sJUhNeww?w=900&q=80",
     alt: "Shadowbox wood fence on metal posts",
     type: "Wood Fencing",
-    location: "Ridgefield, WA",
+    location: "Kingston, WA",
     span: "col-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    alt: "Residential chain link with slats",
-    type: "Chain Link",
-    location: "Vancouver, WA",
-    span: "",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
-    alt: "Vinyl picket fence",
-    type: "Vinyl Fencing",
-    location: "La Center, WA",
-    span: "",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    alt: "Custom wood gate with arch",
+    src: "https://images.unsplash.com/photo-tKW2LyWx8Og?w=600&q=80",
+    alt: "Custom wood gate installation",
     type: "Gates",
-    location: "Camas, WA",
+    location: "Poulsbo, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80",
+    src: "https://images.unsplash.com/photo-bLURjRQ3WfY?w=600&q=80",
+    alt: "Residential wood fence",
+    type: "Wood Fencing",
+    location: "Port Orchard, WA",
+    span: "",
+  },
+  {
+    src: "https://images.unsplash.com/photo-qMO_3DvYVis?w=600&q=80",
+    alt: "Custom wood fence close detail",
+    type: "Wood Fencing",
+    location: "Silverdale, WA",
+    span: "",
+  },
+  {
+    src: "https://images.unsplash.com/photo-gyOmQE2vzWs?w=900&q=80",
     alt: "Commercial chain link perimeter fence",
     type: "Commercial",
-    location: "Vancouver, WA",
+    location: "Bremerton, WA",
     span: "col-span-2",
   },
 ];
@@ -107,7 +107,7 @@ export default function GalleryPage() {
           </h1>
           <p className="text-brand-fog mt-6 max-w-xl">
             Every fence we build becomes part of our portfolio. Browse completed
-            projects across Clark County and SW Washington.
+            projects across Kitsap County and NW Washington.
           </p>
         </div>
       </section>

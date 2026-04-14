@@ -92,8 +92,8 @@ export default function HomePage() {
         {/* Hero background image – replace with real project photo */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80"
-            alt="Quality fence installation in Vancouver WA"
+            src="https://images.unsplash.com/photo-MZrcugN3mpE?w=1600&q=80"
+            alt="Wood fence installation in Poulsbo WA"
             fill
             priority
             className="object-cover opacity-40"
@@ -215,7 +215,7 @@ export default function HomePage() {
           {/* Image */}
           <div className="relative h-[500px] overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80"
+              src="https://images.unsplash.com/photo-gyOmQE2vzWs?w=900&q=80"
               alt="Infinity Fencing NW – veteran owned fence contractor"
               fill
               className="object-cover"
@@ -379,18 +379,16 @@ export default function HomePage() {
                 }`}
               >
                 <Image
-                  src={`https://images.unsplash.com/photo-${
-                    [
-                      "1558618666-fcd25c85cd64",
-                      "1600585154340-be6161a56a0c",
-                      "1558618666-fcd25c85cd64",
-                      "1600585154340-be6161a56a0c",
-                      "1558618666-fcd25c85cd64",
-                      "1600585154340-be6161a56a0c",
-                      "1558618666-fcd25c85cd64",
-                      "1600585154340-be6161a56a0c",
-                    ][i]
-                  }?w=600&q=70`}
+                  src={[
+                    "https://images.unsplash.com/photo-MZrcugN3mpE?w=600&q=70",
+                    "https://images.unsplash.com/photo-sCH-WMJRdxk?w=600&q=70",
+                    "https://images.unsplash.com/photo-uV-dSJ98q_U?w=600&q=70",
+                    "https://images.unsplash.com/photo-gyOmQE2vzWs?w=600&q=70",
+                    "https://images.unsplash.com/photo-tKW2LyWx8Og?w=600&q=70",
+                    "https://images.unsplash.com/photo-BRKeJOdPaAE?w=600&q=70",
+                    "https://images.unsplash.com/photo-zL1sJUhNeww?w=600&q=70",
+                    "https://images.unsplash.com/photo-r-VUeYK9648?w=600&q=70",
+                  ][i]}
                   alt={`Fence installation project ${i + 1}`}
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"

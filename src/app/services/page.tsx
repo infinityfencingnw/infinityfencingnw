@@ -24,7 +24,7 @@ const SERVICES = [
     ],
     badge: "Our Specialty",
     image:
-      "https://images.unsplash.com/photo-MZrcugN3mpE?w=900&q=80",
+      "https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     slug: "chain-link",
@@ -40,7 +40,7 @@ const SERVICES = [
     ],
     badge: "Affordable",
     image:
-      "https://images.unsplash.com/photo-gyOmQE2vzWs?w=900&q=80",
+      "https://images.pexels.com/photos/2381712/pexels-photo-2381712.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     slug: "vinyl-pvc",
@@ -56,7 +56,7 @@ const SERVICES = [
     ],
     badge: "Low Maintenance",
     image:
-      "https://images.unsplash.com/photo-MZrcugN3mpE?w=900&q=80",
+      "https://images.pexels.com/photos/11693890/pexels-photo-11693890.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     slug: "security",
@@ -72,7 +72,7 @@ const SERVICES = [
     ],
     badge: "Heavy Duty",
     image:
-      "https://images.unsplash.com/photo-gyOmQE2vzWs?w=900&q=80",
+      "https://images.pexels.com/photos/5860835/pexels-photo-5860835.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     slug: "commercial",
@@ -88,7 +88,7 @@ const SERVICES = [
     ],
     badge: "Commercial",
     image:
-      "https://images.unsplash.com/photo-MZrcugN3mpE?w=900&q=80",
+      "https://images.pexels.com/photos/683402/pexels-photo-683402.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
   {
     slug: "temporary",
@@ -104,7 +104,7 @@ const SERVICES = [
     ],
     badge: "Fast Deploy",
     image:
-      "https://images.unsplash.com/photo-gyOmQE2vzWs?w=900&q=80",
+      "https://images.pexels.com/photos/951408/pexels-photo-951408.jpeg?auto=compress&cs=tinysrgb&w=900",
   },
 ];
 

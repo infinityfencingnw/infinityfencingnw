@@ -92,8 +92,8 @@ export default function HomePage() {
         {/* Hero background image – replace with real project photo */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-MZrcugN3mpE?w=1600&q=80"
-            alt="Wood fence installation in Poulsbo WA"
+            src="/landing.jpg"
+            alt="Fence installation in Poulsbo WA"
             fill
             priority
             className="object-cover opacity-40"
@@ -215,7 +215,7 @@ export default function HomePage() {
           {/* Image */}
           <div className="relative h-[500px] overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-gyOmQE2vzWs?w=900&q=80"
+              src="https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=900"
               alt="Infinity Fencing NW – veteran owned fence contractor"
               fill
               className="object-cover"
@@ -380,14 +380,14 @@ export default function HomePage() {
               >
                 <Image
                   src={[
-                    "https://images.unsplash.com/photo-MZrcugN3mpE?w=600&q=70",
-                    "https://images.unsplash.com/photo-sCH-WMJRdxk?w=600&q=70",
-                    "https://images.unsplash.com/photo-uV-dSJ98q_U?w=600&q=70",
-                    "https://images.unsplash.com/photo-gyOmQE2vzWs?w=600&q=70",
-                    "https://images.unsplash.com/photo-tKW2LyWx8Og?w=600&q=70",
-                    "https://images.unsplash.com/photo-BRKeJOdPaAE?w=600&q=70",
-                    "https://images.unsplash.com/photo-zL1sJUhNeww?w=600&q=70",
-                    "https://images.unsplash.com/photo-r-VUeYK9648?w=600&q=70",
+                    "https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/14306688/pexels-photo-14306688.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/2381712/pexels-photo-2381712.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/11693890/pexels-photo-11693890.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/9581523/pexels-photo-9581523.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/5860835/pexels-photo-5860835.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/951408/pexels-photo-951408.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/48246/pexels-photo-48246.jpeg?auto=compress&cs=tinysrgb&w=600",
                   ][i]}
                   alt={`Fence installation project ${i + 1}`}
                   fill

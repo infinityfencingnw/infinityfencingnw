@@ -62,7 +62,7 @@ const SERVICES: Record<
       },
     ],
     image:
-      "https://images.unsplash.com/photo-MZrcugN3mpE?w=1200&q=80",
+      "https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
   "chain-link": {
     title: "Chain Link Fencing",
@@ -103,7 +103,7 @@ const SERVICES: Record<
       },
     ],
     image:
-      "https://images.unsplash.com/photo-gyOmQE2vzWs?w=1200&q=80",
+      "https://images.pexels.com/photos/2381712/pexels-photo-2381712.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
   "vinyl-pvc": {
     title: "Vinyl & PVC Fencing",
@@ -144,7 +144,7 @@ const SERVICES: Record<
       },
     ],
     image:
-      "https://images.unsplash.com/photo-MZrcugN3mpE?w=1200&q=80",
+      "https://images.pexels.com/photos/11693890/pexels-photo-11693890.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
   security: {
     title: "Security Fencing",
@@ -179,7 +179,7 @@ const SERVICES: Record<
       },
     ],
     image:
-      "https://images.unsplash.com/photo-gyOmQE2vzWs?w=1200&q=80",
+      "https://images.pexels.com/photos/5860835/pexels-photo-5860835.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
   commercial: {
     title: "Commercial Fencing",
@@ -215,7 +215,7 @@ const SERVICES: Record<
       },
     ],
     image:
-      "https://images.unsplash.com/photo-MZrcugN3mpE?w=1200&q=80",
+      "https://images.pexels.com/photos/683402/pexels-photo-683402.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
   temporary: {
     title: "Temporary Fencing",
@@ -251,7 +251,7 @@ const SERVICES: Record<
       },
     ],
     image:
-      "https://images.unsplash.com/photo-gyOmQE2vzWs?w=1200&q=80",
+      "https://images.pexels.com/photos/951408/pexels-photo-951408.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
 };
 

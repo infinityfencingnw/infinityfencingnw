@@ -35,7 +35,7 @@ export default function AboutPage() {
       <section className="relative bg-brand-black pt-32 pb-20 section-padding overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
-            src="https://images.unsplash.com/photo-zL1sJUhNeww?w=1600&q=70"
+            src="https://images.pexels.com/photos/9581523/pexels-photo-9581523.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
             fill
             className="object-cover"
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative h-[500px] overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-gyOmQE2vzWs?w=900&q=80"
+              src="https://images.pexels.com/photos/14306688/pexels-photo-14306688.jpeg?auto=compress&cs=tinysrgb&w=900"
               alt="Infinity Fencing NW – veteran owned fence contractor Poulsbo WA"
               fill
               className="object-cover"

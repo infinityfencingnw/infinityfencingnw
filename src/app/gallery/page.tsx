@@ -12,70 +12,70 @@ export const metadata: Metadata = {
 // Replace src values with real project photos
 const GALLERY = [
   {
-    src: "https://images.unsplash.com/photo-MZrcugN3mpE?w=900&q=80",
+    src: "https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Wood privacy fence on metal posts – Poulsbo WA",
     type: "Wood Fencing",
     location: "Poulsbo, WA",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-r-VUeYK9648?w=600&q=80",
+    src: "https://images.pexels.com/photos/2381712/pexels-photo-2381712.jpeg?auto=compress&cs=tinysrgb&w=600",
     alt: "Chain link fence installation – Kitsap County",
     type: "Chain Link",
     location: "Bremerton, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-uV-dSJ98q_U?w=600&q=80",
+    src: "https://images.pexels.com/photos/11693890/pexels-photo-11693890.jpeg?auto=compress&cs=tinysrgb&w=600",
     alt: "White vinyl privacy fence – Silverdale WA",
     type: "Vinyl Fencing",
     location: "Silverdale, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-BRKeJOdPaAE?w=600&q=80",
+    src: "https://images.pexels.com/photos/5860835/pexels-photo-5860835.jpeg?auto=compress&cs=tinysrgb&w=600",
     alt: "Security fence – Kitsap County",
     type: "Security",
     location: "Bainbridge Island, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-sCH-WMJRdxk?w=600&q=80",
+    src: "https://images.pexels.com/photos/14306688/pexels-photo-14306688.jpeg?auto=compress&cs=tinysrgb&w=600",
     alt: "Board-on-board cedar fence – Poulsbo WA",
     type: "Wood Fencing",
     location: "Poulsbo, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-zL1sJUhNeww?w=900&q=80",
+    src: "https://images.pexels.com/photos/9581523/pexels-photo-9581523.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Shadowbox wood fence on metal posts",
     type: "Wood Fencing",
     location: "Kingston, WA",
     span: "col-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-tKW2LyWx8Og?w=600&q=80",
+    src: "https://images.pexels.com/photos/48246/pexels-photo-48246.jpeg?auto=compress&cs=tinysrgb&w=600",
     alt: "Custom wood gate installation",
     type: "Gates",
     location: "Poulsbo, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-bLURjRQ3WfY?w=600&q=80",
+    src: "https://images.pexels.com/photos/951408/pexels-photo-951408.jpeg?auto=compress&cs=tinysrgb&w=600",
     alt: "Residential wood fence",
     type: "Wood Fencing",
     location: "Port Orchard, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-qMO_3DvYVis?w=600&q=80",
+    src: "https://images.pexels.com/photos/683402/pexels-photo-683402.jpeg?auto=compress&cs=tinysrgb&w=600",
     alt: "Custom wood fence close detail",
     type: "Wood Fencing",
     location: "Silverdale, WA",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-gyOmQE2vzWs?w=900&q=80",
+    src: "https://images.pexels.com/photos/683402/pexels-photo-683402.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Commercial chain link perimeter fence",
     type: "Commercial",
     location: "Bremerton, WA",
@@ -166,8 +166,8 @@ export default function GalleryPage() {
           Like What You See?
         </h2>
         <p className="text-white/80 mb-8 max-w-md mx-auto">
-          Get a free estimate and let's plan your project. We serve all of Clark
-          County and SW Washington.
+          Get a free estimate and let's plan your project. We serve all of
+          Kitsap County and NW Washington.
         </p>
         <Link
           href="/contact"

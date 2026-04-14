@@ -1,228 +1,303 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight, Instagram, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Fence Tips & Guides – Blog | Infinity Fencing NW",
+  title: "Follow Us – Instagram & TikTok | Infinity Fencing NW",
   description:
-    "Fence installation tips, material guides, and advice for homeowners in Vancouver WA and Clark County. Expert insight from Infinity Fencing NW.",
+    "Follow Infinity Fencing NW on Instagram and TikTok for project photos, fence tips, and behind-the-scenes content from Poulsbo WA and Kitsap County.",
 };
 
-/*
-  BLOG & SEO STRATEGY — NOTES FOR CLAUDE CODE
-  ─────────────────────────────────────────────
-  These blog posts are your LOCAL SEO engine. Target:
-  
-  HIGH-VALUE LOCAL KEYWORDS TO WRITE ABOUT:
-  - "fence contractor Vancouver WA" 
-  - "how much does a fence cost in Washington"
-  - "wood fence vs vinyl fence Pacific Northwest"
-  - "fence permit Clark County WA"
-  - "best fence for rainy climate"
-  - "how long does a wood fence last in Washington"
-  - "chain link fence cost per foot Vancouver WA"
-  - "wood fence on metal posts pros cons"
-  - "dog fence ideas Vancouver WA"
-  - "commercial fencing Clark County"
+// TikTok icon since lucide doesn't include it
+function TikTokIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z" />
+    </svg>
+  );
+}
 
-  RECOMMENDED CMS OPTIONS:
-  1. Contentlayer + MDX (file-based, free, great for dev)
-     - npm install contentlayer next-contentlayer
-     - Write posts as .mdx files in /content/blog/
-  
-  2. Sanity.io (headless CMS, free tier)
-     - Great for client to add posts without code
-     - npm install next-sanity
-  
-  3. Notion + notion-to-md
-     - Write in Notion, auto-publish to site
-  
-  EACH POST SHOULD HAVE:
-  - Keyword-rich title and description
-  - Local city/county mentions naturally throughout
-  - Internal links to relevant service pages
-  - A call to action at the end (free estimate)
-  - FAQ section (boosts featured snippet chances)
-  - 800-1500 words minimum
-  ─────────────────────────────────────────────
-*/
+// To embed specific posts, paste Instagram post URLs (instagram.com/p/POSTID)
+// or TikTok video URLs (tiktok.com/@infinityfencingnw/video/VIDEOID) here.
+// Leave the array empty to hide that section.
+const INSTAGRAM_POSTS: { url: string; caption: string }[] = [
+  // Example: { url: "https://www.instagram.com/p/POSTID/", caption: "Caption here" }
+];
 
-const POSTS = [
+const TIKTOK_POSTS: { url: string; caption: string }[] = [
+  // Example: { url: "https://www.tiktok.com/@infinityfencingnw/video/VIDEOID", caption: "Caption here" }
+];
+
+const HIGHLIGHTS = [
   {
-    slug: "wood-fence-metal-posts-vs-wood-posts",
-    title: "Wood Posts vs. Metal Posts: Which Lasts Longer in SW Washington?",
-    excerpt:
-      "Clark County's wet winters are hard on fence posts. We break down why lifetime metal posts outperform wood posts and what the real cost difference looks like over 10 years.",
-    category: "Wood Fencing",
-    date: "2025-03-15",
-    readTime: "6 min",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=70",
+    label: "Project Photos",
+    desc: "Before & after shots from recent installs across Kitsap County.",
+    icon: "📸",
   },
   {
-    slug: "fence-permit-clark-county-wa",
-    title: "Do You Need a Permit to Build a Fence in Clark County, WA?",
-    excerpt:
-      "The short answer is: sometimes. Here's when you need a permit, how to get one, and how Infinity Fencing NW handles the paperwork for you.",
-    category: "Guides",
-    date: "2025-02-28",
-    readTime: "4 min",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=70",
+    label: "Fence Tips",
+    desc: "Quick tips on maintenance, materials, and what to look for when hiring a contractor.",
+    icon: "💡",
   },
   {
-    slug: "fence-cost-guide-vancouver-wa-2025",
-    title: "How Much Does a Fence Cost in Vancouver, WA? (2025 Guide)",
-    excerpt:
-      "A realistic breakdown of fence installation costs in Clark County — including materials, labor, and what factors drive the price up or down.",
-    category: "Cost Guides",
-    date: "2025-02-10",
-    readTime: "8 min",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=70",
+    label: "Behind the Scenes",
+    desc: "The crew, the process, and what goes into building a fence that lasts decades.",
+    icon: "🎬",
   },
   {
-    slug: "vinyl-vs-wood-fence-pacific-northwest",
-    title: "Vinyl vs. Wood Fencing in the Pacific Northwest: Which Is Right for You?",
-    excerpt:
-      "Both have real advantages. We compare maintenance, cost, lifespan, and aesthetics to help you make the right call for your property.",
-    category: "Materials",
-    date: "2025-01-22",
-    readTime: "7 min",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=70",
-  },
-  {
-    slug: "chain-link-fence-residential-guide",
-    title: "Is Chain Link Fencing Right for Your Home? A Homeowner's Guide",
-    excerpt:
-      "Chain link has a reputation problem it doesn't deserve. Here's when it's the smartest choice — and how to make it look better than you'd expect.",
-    category: "Chain Link",
-    date: "2025-01-08",
-    readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=70",
-  },
-  {
-    slug: "best-fence-for-dogs-vancouver-wa",
-    title: "The Best Fence Types for Dogs in Vancouver, WA",
-    excerpt:
-      "Dogs are escape artists. We've seen it all — here are the fencing solutions that actually keep them in, depending on your breed and yard size.",
-    category: "Guides",
-    date: "2024-12-19",
-    readTime: "5 min",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=70",
+    label: "Time-Lapses",
+    desc: "Full fence installs condensed into satisfying short clips on TikTok.",
+    icon: "⚡",
   },
 ];
 
-export default function BlogPage() {
+export default function SocialPage() {
   return (
     <>
       {/* Hero */}
       <section className="bg-brand-black pt-32 pb-16 section-padding">
         <div className="max-w-7xl mx-auto">
-          <span className="section-label">Knowledge Base</span>
+          <span className="section-label">Social Media</span>
           <h1 className="text-6xl md:text-8xl font-display font-900 uppercase text-brand-white leading-none">
-            Fence
+            Follow
             <br />
-            <span className="text-brand-amber">Guides</span>
+            <span className="text-brand-amber">Along</span>
           </h1>
-          <p className="text-brand-fog mt-6 max-w-xl">
-            Tips, cost guides, and local advice for homeowners and businesses in
-            Vancouver WA and SW Washington.
+          <p className="text-brand-fog mt-6 max-w-xl text-lg">
+            Project photos, fence tips, and behind-the-scenes content from our
+            crew in Poulsbo WA and Kitsap County.
           </p>
         </div>
       </section>
 
-      {/* Featured post */}
-      <section className="section-padding pt-16 bg-brand-white">
+      {/* Social profile cards */}
+      <section className="section-padding section-gap bg-brand-white">
         <div className="max-w-7xl mx-auto">
-          <Link
-            href={`/blog/${POSTS[0].slug}`}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-0 group border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden"
-          >
-            <div className="relative h-64 lg:h-auto min-h-[320px] overflow-hidden">
-              <Image
-                src={POSTS[0].image}
-                alt={POSTS[0].title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-10 flex flex-col justify-center bg-brand-charcoal">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-brand-amber bg-brand-amber/10 px-2 py-1">
-                  {POSTS[0].category}
-                </span>
-                <span className="text-xs font-mono text-brand-silver">
-                  Featured
-                </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/infinityfencingnw/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden border border-brand-fog hover:border-brand-amber transition-all duration-300 p-10 flex flex-col justify-between min-h-[320px] bg-gradient-to-br from-[#f9f9f9] to-white"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] flex items-center justify-center">
+                    <Instagram size={22} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-brand-silver">
+                      Instagram
+                    </p>
+                    <p className="font-display font-800 text-lg uppercase text-brand-black">
+                      @infinityfencingnw
+                    </p>
+                  </div>
+                </div>
+                <h2 className="font-display font-900 text-3xl uppercase text-brand-black mb-4 group-hover:text-brand-amber transition-colors leading-tight">
+                  Project Photos &<br />Job Site Updates
+                </h2>
+                <p className="text-brand-iron text-sm leading-relaxed max-w-sm">
+                  Follow our Instagram for completed fence installs, before &
+                  after photos, and project highlights from across Kitsap County.
+                </p>
               </div>
-              <h2 className="font-display font-900 text-3xl uppercase text-brand-white mb-4 leading-tight group-hover:text-brand-amber transition-colors">
-                {POSTS[0].title}
-              </h2>
-              <p className="text-brand-fog text-sm leading-relaxed mb-6">
-                {POSTS[0].excerpt}
-              </p>
-              <div className="flex items-center gap-4 text-xs font-mono text-brand-silver">
-                <span className="flex items-center gap-1">
-                  <Calendar size={12} />
-                  {POSTS[0].date}
-                </span>
-                <span className="flex items-center gap-1">
-                  <Clock size={12} />
-                  {POSTS[0].readTime} read
-                </span>
+              <div className="flex items-center gap-2 mt-8 text-brand-amber font-mono text-xs uppercase tracking-widest">
+                Follow on Instagram <ExternalLink size={12} />
               </div>
-            </div>
-          </Link>
+            </a>
+
+            {/* TikTok */}
+            <a
+              href="https://www.tiktok.com/@infinityfencingnw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden border border-brand-fog hover:border-brand-amber transition-all duration-300 p-10 flex flex-col justify-between min-h-[320px] bg-gradient-to-br from-[#f9f9f9] to-white"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-brand-black flex items-center justify-center">
+                    <TikTokIcon size={22} />
+                  </div>
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-brand-silver">
+                      TikTok
+                    </p>
+                    <p className="font-display font-800 text-lg uppercase text-brand-black">
+                      @infinityfencingnw
+                    </p>
+                  </div>
+                </div>
+                <h2 className="font-display font-900 text-3xl uppercase text-brand-black mb-4 group-hover:text-brand-amber transition-colors leading-tight">
+                  Time-Lapses &<br />Fence Builds
+                </h2>
+                <p className="text-brand-iron text-sm leading-relaxed max-w-sm">
+                  Watch full fence installs condensed into short videos. Chain
+                  link runs, wood privacy panels, gate builds — all on TikTok.
+                </p>
+              </div>
+              <div className="flex items-center gap-2 mt-8 text-brand-amber font-mono text-xs uppercase tracking-widest">
+                Follow on TikTok <ExternalLink size={12} />
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Post grid */}
-      <section className="section-padding py-16 pb-24 bg-brand-white">
+      {/* What we post */}
+      <section className="section-padding section-gap bg-brand-charcoal">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {POSTS.slice(1).map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="group border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden flex flex-col"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs font-mono uppercase tracking-widest text-brand-amber mb-3">
-                    {post.category}
-                  </span>
-                  <h3 className="font-display font-800 text-xl uppercase text-brand-black mb-3 leading-tight group-hover:text-brand-amber transition-colors flex-1">
-                    {post.title}
-                  </h3>
-                  <p className="text-brand-iron text-sm leading-relaxed mb-5">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3 text-xs font-mono text-brand-silver">
-                      <span className="flex items-center gap-1">
-                        <Calendar size={11} />
-                        {post.date}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock size={11} />
-                        {post.readTime}
-                      </span>
-                    </div>
-                    <span className="text-xs font-mono text-brand-amber flex items-center gap-1">
-                      Read <ArrowRight size={11} />
-                    </span>
-                  </div>
-                </div>
-              </Link>
+          <span className="section-label">What We Post</span>
+          <h2 className="font-display font-900 text-5xl uppercase text-brand-white mb-12">
+            What to Expect
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {HIGHLIGHTS.map((item) => (
+              <div key={item.label} className="border-t-2 border-brand-amber pt-6">
+                <span className="text-3xl mb-4 block">{item.icon}</span>
+                <h3 className="font-display font-900 text-xl uppercase text-brand-white mb-3">
+                  {item.label}
+                </h3>
+                <p className="text-brand-fog text-sm leading-relaxed">{item.desc}</p>
+              </div>
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Embedded Instagram posts — populated when INSTAGRAM_POSTS has entries */}
+      {INSTAGRAM_POSTS.length > 0 && (
+        <section className="section-padding section-gap bg-brand-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-3 mb-3">
+              <Instagram size={18} className="text-brand-amber" />
+              <span className="section-label" style={{ marginBottom: 0 }}>
+                Instagram
+              </span>
+            </div>
+            <h2 className="font-display font-900 text-4xl uppercase text-brand-black mb-10">
+              Recent Posts
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {INSTAGRAM_POSTS.map((post, i) => (
+                <a
+                  key={i}
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden"
+                >
+                  <iframe
+                    src={`${post.url}embed/`}
+                    className="w-full"
+                    height="480"
+                    frameBorder="0"
+                    scrolling="no"
+                    allowTransparency
+                  />
+                  {post.caption && (
+                    <div className="p-4">
+                      <p className="text-brand-iron text-sm leading-relaxed line-clamp-2">
+                        {post.caption}
+                      </p>
+                    </div>
+                  )}
+                </a>
+              ))}
+            </div>
+            <div className="mt-8">
+              <a
+                href="https://www.instagram.com/infinityfencingnw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex"
+              >
+                View All on Instagram
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Embedded TikTok posts — populated when TIKTOK_POSTS has entries */}
+      {TIKTOK_POSTS.length > 0 && (
+        <section className="section-padding section-gap bg-brand-fog/10">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-3 mb-3">
+              <TikTokIcon size={18} />
+              <span className="section-label" style={{ marginBottom: 0 }}>
+                TikTok
+              </span>
+            </div>
+            <h2 className="font-display font-900 text-4xl uppercase text-brand-black mb-10">
+              Latest Videos
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {TIKTOK_POSTS.map((post, i) => (
+                <a
+                  key={i}
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden"
+                >
+                  <div className="aspect-[9/16] bg-brand-charcoal flex items-center justify-center relative overflow-hidden">
+                    <div className="text-center text-white p-8">
+                      <TikTokIcon size={40} />
+                      <p className="mt-4 font-mono text-xs uppercase tracking-widest text-brand-fog">
+                        Watch on TikTok
+                      </p>
+                    </div>
+                  </div>
+                  {post.caption && (
+                    <div className="p-4">
+                      <p className="text-brand-iron text-sm leading-relaxed line-clamp-2">
+                        {post.caption}
+                      </p>
+                    </div>
+                  )}
+                </a>
+              ))}
+            </div>
+            <div className="mt-8">
+              <a
+                href="https://www.tiktok.com/@infinityfencingnw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex"
+              >
+                View All on TikTok
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA */}
+      <section className="bg-brand-amber section-padding py-20 text-center">
+        <h2 className="font-display font-900 text-5xl uppercase text-white mb-4">
+          Ready to Build?
+        </h2>
+        <p className="text-white/80 mb-8 max-w-md mx-auto">
+          Like what you see on social? Get a free estimate and let's plan your
+          project in Kitsap County.
+        </p>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 bg-white text-brand-amber font-display font-700 uppercase tracking-wider px-10 py-5 text-sm hover:bg-brand-black hover:text-white transition-all"
+        >
+          Get a Free Estimate
+          <ArrowRight size={16} />
+        </Link>
       </section>
     </>
   );

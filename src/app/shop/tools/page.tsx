@@ -1,12 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ShoppingCart, ExternalLink, Package } from "lucide-react";
+import { listProductsByCategory, SpocketProduct } from "@/lib/spocket";
 
 export const metadata: Metadata = {
   title: "Fence Tools & Equipment – Shop | Infinity Fencing NW",
   description:
     "Professional fence installation tools — post drivers, fence staplers, pliers, wire stretchers, panel jacks, and more. Trusted brands shipped direct.",
 };
+
+// ── Try to load live products from Spocket; fall back to static data ──
+async function getTools(): Promise<{
+  products: SpocketProduct[] | null;
+  useLive: boolean;
+}> {
+  if (!process.env.SPOCKET_CLIENT_ID || !process.env.SPOCKET_CLIENT_SECRET) {
+    return { products: null, useLive: false };
+  }
+  try {
+    const data = await listProductsByCategory("fence-tools", 1, 50);
+    return { products: data.products, useLive: true };
+  } catch (err) {
+    console.error("[Shop/Tools] Spocket fetch failed, using static data:", err);
+    return { products: null, useLive: false };
+  }
+}
 
 const TOOL_CATEGORIES = [
   { label: "Driving & Stapling", icon: "🔨", count: 5 },
@@ -172,7 +190,31 @@ const TOOLS = [
 const FEATURED = TOOLS.filter((t) => t.featured);
 const ALL = TOOLS;
 
-export default function ToolsPage() {
+// ── Helpers for live Spocket products ─────────────────────────────
+function spocketPrice(product: SpocketProduct): string {
+  const v = product.variants?.[0];
+  if (!v?.price) return "—";
+  return `$${parseFloat(v.price).toFixed(2)}`;
+}
+
+function spocketInStock(product: SpocketProduct): boolean {
+  return product.variants?.some((v) => v.available && v.inventory_quantity > 0) ?? false;
+}
+
+function spocketSku(product: SpocketProduct): string {
+  return product.variants?.[0]?.sku ?? product.id.toUpperCase().slice(0, 10);
+}
+
+export default async function ToolsPage() {
+  const { products: liveProducts, useLive } = await getTools();
+
+  // Derive featured from Spocket: first 3, or those tagged "featured"
+  const liveFeatured = liveProducts
+    ? liveProducts.filter((p) => p.tags?.includes("featured")).slice(0, 3).concat(
+        liveProducts.filter((p) => !p.tags?.includes("featured"))
+      ).slice(0, 3)
+    : [];
+
   return (
     <>
       {/* Hero */}
@@ -213,11 +255,20 @@ export default function ToolsPage() {
         </div>
       </div>
 
-      {/* Coming soon notice */}
-      <div className="section-padding py-4 bg-brand-amber/10 border-b border-brand-amber/30">
+      {/* Live / coming-soon banner */}
+      <div className={`section-padding py-4 border-b ${useLive ? "bg-green-50 border-green-200" : "bg-brand-amber/10 border-brand-amber/30"}`}>
         <div className="max-w-7xl mx-auto flex items-center gap-3">
-          <span className="text-brand-amber font-mono text-xs uppercase tracking-widest font-700">Store launching soon</span>
-          <span className="text-brand-iron text-xs">— We're setting up supplier accounts. Use "Request Quote" to order now or call <a href="tel:3602001005" className="text-brand-amber underline">360.200.1005</a>.</span>
+          {useLive ? (
+            <>
+              <span className="text-green-700 font-mono text-xs uppercase tracking-widest font-700">● Live inventory</span>
+              <span className="text-green-800 text-xs">Products synced from Spocket supplier catalog.</span>
+            </>
+          ) : (
+            <>
+              <span className="text-brand-amber font-mono text-xs uppercase tracking-widest font-700">Store launching soon</span>
+              <span className="text-brand-iron text-xs">— We're setting up supplier accounts. Use "Request Quote" to order now or call <a href="tel:3602001005" className="text-brand-amber underline">360.200.1005</a>.</span>
+            </>
+          )}
         </div>
       </div>
 
@@ -228,39 +279,85 @@ export default function ToolsPage() {
             Featured Tools
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {FEATURED.map((tool) => (
-              <div key={tool.id} className="border-2 border-brand-amber overflow-hidden flex flex-col bg-white">
-                <div className="h-48 bg-brand-fog/20 flex items-center justify-center relative">
-                  <div className="text-center p-6">
-                    <p className="font-display font-900 text-xl uppercase text-brand-black mb-1">{tool.brand}</p>
-                    <p className="font-mono text-xs text-brand-silver uppercase tracking-widest">{tool.sku}</p>
+            {useLive && liveFeatured.length > 0
+              ? liveFeatured.map((product) => {
+                  const imgSrc = product.images?.[0]?.src;
+                  const inStock = spocketInStock(product);
+                  return (
+                    <div key={product.id} className="border-2 border-brand-amber overflow-hidden flex flex-col bg-white">
+                      <div className="h-48 bg-brand-fog/20 relative overflow-hidden">
+                        {imgSrc ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={imgSrc} alt={product.images[0].alt ?? product.title} className="w-full h-full object-cover" />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <div className="text-center p-6">
+                              <p className="font-display font-900 text-xl uppercase text-brand-black mb-1">{product.vendor}</p>
+                              <p className="font-mono text-xs text-brand-silver uppercase tracking-widest">{spocketSku(product)}</p>
+                            </div>
+                          </div>
+                        )}
+                        <div className="absolute top-3 left-3 bg-brand-amber px-2 py-1">
+                          <span className="text-white font-mono text-xs uppercase tracking-widest">Featured</span>
+                        </div>
+                        {!inStock && (
+                          <div className="absolute top-3 right-3 bg-brand-iron px-2 py-1">
+                            <span className="text-white font-mono text-xs uppercase tracking-widest">Out of Stock</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-6 flex flex-col flex-1">
+                        <span className="text-xs font-mono text-brand-amber uppercase tracking-widest mb-2">{product.category || product.vendor}</span>
+                        <h3 className="font-display font-800 text-lg uppercase text-brand-black mb-2 leading-tight flex-1">
+                          {product.title}
+                        </h3>
+                        <p className="text-brand-iron text-sm leading-relaxed mb-5 line-clamp-3"
+                          dangerouslySetInnerHTML={{ __html: product.description?.replace(/<[^>]*>/g, " ").trim().slice(0, 200) + "…" ?? "" }} />
+                        <div className="flex items-center justify-between">
+                          <span className="font-display font-900 text-2xl text-brand-black">{spocketPrice(product)}</span>
+                          <Link href="/contact"
+                            className="flex items-center gap-1 bg-brand-black text-white text-xs font-mono uppercase px-4 py-2 hover:bg-brand-amber transition-colors">
+                            <ShoppingCart size={11} /> Order
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              : FEATURED.map((tool) => (
+                <div key={tool.id} className="border-2 border-brand-amber overflow-hidden flex flex-col bg-white">
+                  <div className="h-48 bg-brand-fog/20 flex items-center justify-center relative">
+                    <div className="text-center p-6">
+                      <p className="font-display font-900 text-xl uppercase text-brand-black mb-1">{tool.brand}</p>
+                      <p className="font-mono text-xs text-brand-silver uppercase tracking-widest">{tool.sku}</p>
+                    </div>
+                    <div className="absolute top-3 left-3 bg-brand-amber px-2 py-1">
+                      <span className="text-white font-mono text-xs uppercase tracking-widest">Featured</span>
+                    </div>
                   </div>
-                  <div className="absolute top-3 left-3 bg-brand-amber px-2 py-1">
-                    <span className="text-white font-mono text-xs uppercase tracking-widest">Featured</span>
-                  </div>
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs font-mono text-brand-amber uppercase tracking-widest mb-2">{tool.category}</span>
-                  <h3 className="font-display font-800 text-lg uppercase text-brand-black mb-2 leading-tight flex-1">
-                    {tool.name}
-                  </h3>
-                  <p className="text-brand-iron text-sm leading-relaxed mb-5">{tool.desc}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="font-display font-900 text-2xl text-brand-black">${tool.price.toFixed(2)}</span>
-                    <div className="flex gap-2">
-                      <a href={tool.brandUrl} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-xs font-mono uppercase border border-brand-fog px-3 py-2 hover:border-brand-amber text-brand-iron transition-colors">
-                        <ExternalLink size={11} /> Mfr
-                      </a>
-                      <Link href="/contact"
-                        className="flex items-center gap-1 bg-brand-black text-white text-xs font-mono uppercase px-4 py-2 hover:bg-brand-amber transition-colors">
-                        <ShoppingCart size={11} /> Quote
-                      </Link>
+                  <div className="p-6 flex flex-col flex-1">
+                    <span className="text-xs font-mono text-brand-amber uppercase tracking-widest mb-2">{tool.category}</span>
+                    <h3 className="font-display font-800 text-lg uppercase text-brand-black mb-2 leading-tight flex-1">
+                      {tool.name}
+                    </h3>
+                    <p className="text-brand-iron text-sm leading-relaxed mb-5">{tool.desc}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="font-display font-900 text-2xl text-brand-black">${tool.price.toFixed(2)}</span>
+                      <div className="flex gap-2">
+                        <a href={tool.brandUrl} target="_blank" rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-xs font-mono uppercase border border-brand-fog px-3 py-2 hover:border-brand-amber text-brand-iron transition-colors">
+                          <ExternalLink size={11} /> Mfr
+                        </a>
+                        <Link href="/contact"
+                          className="flex items-center gap-1 bg-brand-black text-white text-xs font-mono uppercase px-4 py-2 hover:bg-brand-amber transition-colors">
+                          <ShoppingCart size={11} /> Quote
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
       </section>
@@ -269,39 +366,82 @@ export default function ToolsPage() {
       <section className="section-padding pb-24 bg-brand-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display font-900 text-3xl uppercase text-brand-black mb-8">
-            All Tools
+            {useLive && liveProducts?.length ? `All Tools (${liveProducts.length})` : "All Tools"}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ALL.map((tool) => (
-              <div key={tool.id} className="border border-brand-fog hover:border-brand-amber transition-colors flex flex-col bg-white">
-                <div className="h-40 bg-brand-fog/20 flex items-center justify-center">
-                  <div className="text-center px-4">
-                    <p className="font-display font-800 text-base uppercase text-brand-black">{tool.brand}</p>
-                    <p className="font-mono text-xs text-brand-silver uppercase tracking-widest mt-1">{tool.sku}</p>
+            {useLive && liveProducts?.length
+              ? liveProducts.map((product) => {
+                  const imgSrc = product.images?.[0]?.src;
+                  const inStock = spocketInStock(product);
+                  return (
+                    <div key={product.id} className="border border-brand-fog hover:border-brand-amber transition-colors flex flex-col bg-white">
+                      <div className="h-40 bg-brand-fog/20 relative overflow-hidden">
+                        {imgSrc ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={imgSrc} alt={product.images[0].alt ?? product.title} className="w-full h-full object-cover" />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center px-4 text-center">
+                            <div>
+                              <p className="font-display font-800 text-base uppercase text-brand-black">{product.vendor}</p>
+                              <p className="font-mono text-xs text-brand-silver uppercase tracking-widest mt-1">{spocketSku(product)}</p>
+                            </div>
+                          </div>
+                        )}
+                        {!inStock && (
+                          <div className="absolute bottom-0 left-0 right-0 bg-brand-iron/80 py-1 text-center">
+                            <span className="text-white font-mono text-xs uppercase tracking-widest">Out of Stock</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-5 flex flex-col flex-1">
+                        <span className="text-xs font-mono text-brand-amber uppercase tracking-widest mb-2">{product.category || product.vendor}</span>
+                        <h3 className="font-display font-700 text-sm uppercase text-brand-black mb-2 leading-tight flex-1 line-clamp-2">
+                          {product.title}
+                        </h3>
+                        <p className="text-brand-iron text-xs leading-relaxed mb-4 line-clamp-2"
+                          dangerouslySetInnerHTML={{ __html: product.description?.replace(/<[^>]*>/g, " ").trim().slice(0, 120) + "…" ?? "" }} />
+                        <div className="flex items-center justify-between">
+                          <span className="font-display font-800 text-lg text-brand-black">{spocketPrice(product)}</span>
+                          <Link href="/contact"
+                            className="flex items-center gap-1 bg-brand-black text-white text-xs font-mono uppercase px-3 py-1.5 hover:bg-brand-amber transition-colors">
+                            Order
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              : ALL.map((tool) => (
+                <div key={tool.id} className="border border-brand-fog hover:border-brand-amber transition-colors flex flex-col bg-white">
+                  <div className="h-40 bg-brand-fog/20 flex items-center justify-center">
+                    <div className="text-center px-4">
+                      <p className="font-display font-800 text-base uppercase text-brand-black">{tool.brand}</p>
+                      <p className="font-mono text-xs text-brand-silver uppercase tracking-widest mt-1">{tool.sku}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <span className="text-xs font-mono text-brand-amber uppercase tracking-widest mb-2">{tool.category}</span>
-                  <h3 className="font-display font-700 text-sm uppercase text-brand-black mb-2 leading-tight flex-1 line-clamp-2">
-                    {tool.name}
-                  </h3>
-                  <p className="text-brand-iron text-xs leading-relaxed mb-4 line-clamp-2">{tool.desc}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="font-display font-800 text-lg text-brand-black">${tool.price.toFixed(2)}</span>
-                    <div className="flex gap-1.5">
-                      <a href={tool.brandUrl} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-xs font-mono border border-brand-fog px-2 py-1.5 hover:border-brand-amber text-brand-iron transition-colors">
-                        <ExternalLink size={10} />
-                      </a>
-                      <Link href="/contact"
-                        className="flex items-center gap-1 bg-brand-black text-white text-xs font-mono uppercase px-3 py-1.5 hover:bg-brand-amber transition-colors">
-                        Quote
-                      </Link>
+                  <div className="p-5 flex flex-col flex-1">
+                    <span className="text-xs font-mono text-brand-amber uppercase tracking-widest mb-2">{tool.category}</span>
+                    <h3 className="font-display font-700 text-sm uppercase text-brand-black mb-2 leading-tight flex-1 line-clamp-2">
+                      {tool.name}
+                    </h3>
+                    <p className="text-brand-iron text-xs leading-relaxed mb-4 line-clamp-2">{tool.desc}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="font-display font-800 text-lg text-brand-black">${tool.price.toFixed(2)}</span>
+                      <div className="flex gap-1.5">
+                        <a href={tool.brandUrl} target="_blank" rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-xs font-mono border border-brand-fog px-2 py-1.5 hover:border-brand-amber text-brand-iron transition-colors">
+                          <ExternalLink size={10} />
+                        </a>
+                        <Link href="/contact"
+                          className="flex items-center gap-1 bg-brand-black text-white text-xs font-mono uppercase px-3 py-1.5 hover:bg-brand-amber transition-colors">
+                          Quote
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
       </section>

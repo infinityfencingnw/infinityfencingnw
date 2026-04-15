@@ -45,20 +45,10 @@ export const metadata: Metadata = {
 
 // Placeholder product data — replace with real Shopify/DB queries
 const CATEGORIES = [
-  { label: "Fence Panels", href: "/shop/fence-panels", count: 24, icon: "🪵" },
-  {
-    label: "Posts & Hardware",
-    href: "/shop/posts-hardware",
-    count: 48,
-    icon: "🔩",
-  },
-  { label: "Gates", href: "/shop/gates", count: 18, icon: "🚪" },
-  {
-    label: "Tools & Accessories",
-    href: "/shop/tools",
-    count: 32,
-    icon: "🔧",
-  },
+  { label: "Fence Tools", href: "/shop/tools", count: 12, icon: "🔧" },
+  { label: "Fence Panels", href: "/shop/fence-panels", count: 0, icon: "🪵" },
+  { label: "Posts & Hardware", href: "/shop/posts-hardware", count: 0, icon: "🔩" },
+  { label: "Gate Hardware", href: "/shop/gates", count: 0, icon: "🚪" },
 ];
 
 const FEATURED_PRODUCTS = [

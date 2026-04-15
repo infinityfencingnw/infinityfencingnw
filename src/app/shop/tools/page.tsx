@@ -312,7 +312,7 @@ export default async function ToolsPage() {
                           {product.title}
                         </h3>
                         <p className="text-brand-iron text-sm leading-relaxed mb-5 line-clamp-3"
-                          dangerouslySetInnerHTML={{ __html: product.description?.replace(/<[^>]*>/g, " ").trim().slice(0, 200) + "…" ?? "" }} />
+                          dangerouslySetInnerHTML={{ __html: (product.description?.replace(/<[^>]*>/g, " ").trim().slice(0, 200) ?? "") + "…" }} />
                         <div className="flex items-center justify-between">
                           <span className="font-display font-900 text-2xl text-brand-black">{spocketPrice(product)}</span>
                           <Link href="/contact"
@@ -399,7 +399,7 @@ export default async function ToolsPage() {
                           {product.title}
                         </h3>
                         <p className="text-brand-iron text-xs leading-relaxed mb-4 line-clamp-2"
-                          dangerouslySetInnerHTML={{ __html: product.description?.replace(/<[^>]*>/g, " ").trim().slice(0, 120) + "…" ?? "" }} />
+                          dangerouslySetInnerHTML={{ __html: (product.description?.replace(/<[^>]*>/g, " ").trim().slice(0, 120) ?? "") + "…" }} />
                         <div className="flex items-center justify-between">
                           <span className="font-display font-800 text-lg text-brand-black">{spocketPrice(product)}</span>
                           <Link href="/contact"

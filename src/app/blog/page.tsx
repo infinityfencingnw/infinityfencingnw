@@ -84,6 +84,50 @@ export default function SocialPage() {
         </div>
       </section>
 
+      {/* TikTok videos */}
+      <section className="section-padding py-16 bg-brand-fog/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-3 mb-3">
+            <TikTokIcon size={18} />
+            <span className="section-label" style={{ marginBottom: 0 }}>TikTok</span>
+          </div>
+          <h2 className="font-display font-900 text-4xl uppercase text-brand-black mb-2">
+            Latest Videos
+          </h2>
+          <p className="text-brand-iron text-sm mb-10 max-w-lg">
+            Real builds, real crew, real results. Watch us work — then call us to
+            do yours.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TIKTOK_VIDEOS.map((videoId) => (
+              <div
+                key={videoId}
+                className="border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden bg-white"
+              >
+                <iframe
+                  src={`https://www.tiktok.com/embed/v2/${videoId}`}
+                  className="w-full"
+                  height="740"
+                  allow="encrypted-media"
+                  allowFullScreen
+                  style={{ border: "none" }}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-10">
+            <a
+              href="https://www.tiktok.com/@infinityfencingnw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex"
+            >
+              Follow on TikTok <ExternalLink size={14} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Social profile cards */}
       <section className="section-padding section-gap bg-brand-white">
         <div className="max-w-7xl mx-auto">
@@ -245,50 +289,6 @@ export default function SocialPage() {
           </div>
         </section>
       )}
-
-      {/* TikTok videos */}
-      <section className="section-padding py-16 bg-brand-fog/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-3 mb-3">
-            <TikTokIcon size={18} />
-            <span className="section-label" style={{ marginBottom: 0 }}>TikTok</span>
-          </div>
-          <h2 className="font-display font-900 text-4xl uppercase text-brand-black mb-2">
-            Latest Videos
-          </h2>
-          <p className="text-brand-iron text-sm mb-10 max-w-lg">
-            Real builds, real crew, real results. Watch us work — then call us to
-            do yours.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TIKTOK_VIDEOS.map((videoId) => (
-              <div
-                key={videoId}
-                className="border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden bg-white"
-              >
-                <iframe
-                  src={`https://www.tiktok.com/embed/v2/${videoId}`}
-                  className="w-full"
-                  height="740"
-                  allow="encrypted-media"
-                  allowFullScreen
-                  style={{ border: "none" }}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-10">
-            <a
-              href="https://www.tiktok.com/@infinityfencingnw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary inline-flex"
-            >
-              Follow on TikTok <ExternalLink size={14} />
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="bg-brand-amber section-padding py-20 text-center">

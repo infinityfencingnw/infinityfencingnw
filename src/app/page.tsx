@@ -25,8 +25,8 @@ const SERVICES = [
     desc: "Classic wood beauty on lifetime metal posts for unmatched strength and longevity. Every style available.",
     href: "/services/wood-fencing",
     images: [
-      "https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/14306688/pexels-photo-14306688.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "/gallery/g04.jpg",
+      "/gallery/g11.jpg",
     ],
   },
   {
@@ -36,8 +36,8 @@ const SERVICES = [
     desc: "Galvanized or vinyl-coated. Ideal for residential and commercial security with clear sightlines.",
     href: "/services/chain-link",
     images: [
-      "https://images.pexels.com/photos/2381712/pexels-photo-2381712.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/5860835/pexels-photo-5860835.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "/gallery/g01.jpg",
+      "/gallery/g06.jpg",
     ],
   },
   {
@@ -57,7 +57,8 @@ const SERVICES = [
     desc: "Automated, cantilever, fabricated metal, and wood gates. Custom-built to match your fence and property.",
     href: "/services/gates",
     images: [
-      "https://images.pexels.com/photos/48246/pexels-photo-48246.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "/gallery/g08.jpg",
+      "/gallery/g03.jpg",
     ],
   },
   {

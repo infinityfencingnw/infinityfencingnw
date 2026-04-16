@@ -61,8 +61,7 @@ const SERVICES: Record<
         a: "Most standard residential wood fences (under 6ft in side/back yard) don't require a permit. We'll flag any requirements during your estimate and handle the application if needed.",
       },
     ],
-    image:
-      "https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/gallery/g05.jpg",
   },
   "chain-link": {
     title: "Chain Link Fencing",
@@ -102,8 +101,7 @@ const SERVICES: Record<
         a: "Galvanized chain link typically lasts 20+ years with minimal maintenance. Vinyl-coated can last even longer due to the additional corrosion protection.",
       },
     ],
-    image:
-      "https://images.pexels.com/photos/2381712/pexels-photo-2381712.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/gallery/g01.jpg",
   },
   "vinyl-pvc": {
     title: "Vinyl & PVC Fencing",
@@ -183,8 +181,7 @@ const SERVICES: Record<
         a: "Yes. We can fabricate steel and iron gates to custom dimensions and designs — including decorative elements, arches, and powder-coat finishes.",
       },
     ],
-    image:
-      "https://images.pexels.com/photos/48246/pexels-photo-48246.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/gallery/g08.jpg",
   },
   commercial: {
     title: "Commercial Fencing",

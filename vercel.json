@@ -31,12 +31,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/gallery",
-      "destination": "/gallery",
-      "permanent": false
-    }
   ]
 }

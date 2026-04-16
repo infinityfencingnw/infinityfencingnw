@@ -22,9 +22,23 @@ function TikTokIcon({ size = 20 }: { size?: number }) {
   );
 }
 
-// Paste Instagram post URLs (instagram.com/p/POSTID) or TikTok video URLs here to embed them.
+// Paste Instagram post URLs (instagram.com/p/POSTID) here to embed them.
 const INSTAGRAM_POSTS: { url: string; caption: string }[] = [];
-const TIKTOK_POSTS: { url: string; caption: string }[] = [];
+
+// TikTok video IDs — extracted from @infinityfencingnw video URLs
+const TIKTOK_VIDEOS = [
+  "7618743801372347679",
+  "7582769195033562398",
+  "7582697022076046622",
+  "7541899584218336543",
+  "7518964948756630815",
+  "7485436597542964510",
+  "7471773968597257502",
+  "7467057222023957791",
+  "7453688516564815135",
+  "7442184690976525614",
+  "7435074828127800618",
+];
 
 const HIGHLIGHTS = [
   {
@@ -232,42 +246,49 @@ export default function SocialPage() {
         </section>
       )}
 
-      {/* Embedded TikTok posts */}
-      {TIKTOK_POSTS.length > 0 && (
-        <section className="section-padding section-gap bg-brand-fog/10">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center gap-3 mb-3">
-              <TikTokIcon size={18} />
-              <span className="section-label" style={{ marginBottom: 0 }}>TikTok</span>
-            </div>
-            <h2 className="font-display font-900 text-4xl uppercase text-brand-black mb-10">Latest Videos</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {TIKTOK_POSTS.map((post, i) => (
-                <a key={i} href={post.url} target="_blank" rel="noopener noreferrer"
-                  className="group border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden">
-                  <div className="aspect-[9/16] bg-brand-charcoal flex items-center justify-center">
-                    <div className="text-center text-white p-8">
-                      <TikTokIcon size={40} />
-                      <p className="mt-4 font-mono text-xs uppercase tracking-widest text-brand-fog">Watch on TikTok</p>
-                    </div>
-                  </div>
-                  {post.caption && (
-                    <div className="p-4">
-                      <p className="text-brand-iron text-sm leading-relaxed line-clamp-2">{post.caption}</p>
-                    </div>
-                  )}
-                </a>
-              ))}
-            </div>
-            <div className="mt-8">
-              <a href="https://www.tiktok.com/@infinityfencingnw" target="_blank" rel="noopener noreferrer"
-                className="btn-secondary inline-flex">
-                View All on TikTok <ExternalLink size={14} />
-              </a>
-            </div>
+      {/* TikTok videos */}
+      <section className="section-padding py-16 bg-brand-fog/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-3 mb-3">
+            <TikTokIcon size={18} />
+            <span className="section-label" style={{ marginBottom: 0 }}>TikTok</span>
           </div>
-        </section>
-      )}
+          <h2 className="font-display font-900 text-4xl uppercase text-brand-black mb-2">
+            Latest Videos
+          </h2>
+          <p className="text-brand-iron text-sm mb-10 max-w-lg">
+            Real builds, real crew, real results. Watch us work — then call us to
+            do yours.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TIKTOK_VIDEOS.map((videoId) => (
+              <div
+                key={videoId}
+                className="border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden bg-white"
+              >
+                <iframe
+                  src={`https://www.tiktok.com/embed/v2/${videoId}`}
+                  className="w-full"
+                  height="740"
+                  allow="encrypted-media"
+                  allowFullScreen
+                  style={{ border: "none" }}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-10">
+            <a
+              href="https://www.tiktok.com/@infinityfencingnw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex"
+            >
+              Follow on TikTok <ExternalLink size={14} />
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="bg-brand-amber section-padding py-20 text-center">

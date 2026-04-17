@@ -52,7 +52,8 @@ export default function AboutPage() {
               src="/LI9A3566.JPG"
               alt="Kelly and Tony – Founders of Infinity Fencing NW"
               fill
-              className="object-cover object-top"
+              className="object-cover"
+              style={{ objectPosition: "center 62%" }}
             />
             {/* Name caption */}
             <div className="absolute bottom-0 left-0 right-0 bg-brand-black/80 px-6 py-4 flex justify-between items-end">

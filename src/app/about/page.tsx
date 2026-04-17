@@ -121,7 +121,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative overflow-hidden">
             <Image
-              src="/founders.jpg"
+              src="/LI9A3566.jpg"
               alt="Kelly and Tony – Founders of Infinity Fencing NW"
               width={900}
               height={1200}

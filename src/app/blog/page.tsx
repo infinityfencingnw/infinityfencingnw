@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Instagram, Facebook, ExternalLink } from "lucide-react";
+import { TikTokVideoGrid } from "@/components/TikTokVideoGrid";
 
 export const metadata: Metadata = {
   title: "Follow Us – Social Media | Infinity Fencing NW",
@@ -22,10 +23,8 @@ function TikTokIcon({ size = 20 }: { size?: number }) {
   );
 }
 
-// Paste Instagram post URLs (instagram.com/p/POSTID) here to embed them.
 const INSTAGRAM_POSTS: { url: string; caption: string }[] = [];
 
-// TikTok video IDs — extracted from @infinityfencingnw video URLs
 const TIKTOK_VIDEOS = [
   "7618743801372347679",
   "7582769195033562398",
@@ -39,6 +38,25 @@ const TIKTOK_VIDEOS = [
   "7442184690976525614",
   "7435074828127800618",
 ];
+
+async function fetchTikTokMeta(
+  videoId: string
+): Promise<{ thumbnailUrl: string | null; title: string | null }> {
+  try {
+    const res = await fetch(
+      `https://www.tiktok.com/oembed?url=https://www.tiktok.com/@infinityfencingnw/video/${videoId}`,
+      { next: { revalidate: 86400 } }
+    );
+    if (!res.ok) return { thumbnailUrl: null, title: null };
+    const data = await res.json();
+    return {
+      thumbnailUrl: (data.thumbnail_url as string) ?? null,
+      title: (data.title as string) ?? null,
+    };
+  } catch {
+    return { thumbnailUrl: null, title: null };
+  }
+}
 
 const HIGHLIGHTS = [
   {
@@ -63,7 +81,14 @@ const HIGHLIGHTS = [
   },
 ];
 
-export default function SocialPage() {
+export default async function SocialPage() {
+  const videoData = await Promise.all(
+    TIKTOK_VIDEOS.map(async (videoId) => {
+      const meta = await fetchTikTokMeta(videoId);
+      return { videoId, ...meta };
+    })
+  );
+
   return (
     <>
       {/* Hero */}
@@ -98,23 +123,7 @@ export default function SocialPage() {
             Real builds, real crew, real results. Watch us work — then call us to
             do yours.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TIKTOK_VIDEOS.map((videoId) => (
-              <div
-                key={videoId}
-                className="border border-brand-fog hover:border-brand-amber transition-colors overflow-hidden bg-white"
-              >
-                <iframe
-                  src={`https://www.tiktok.com/embed/v2/${videoId}`}
-                  className="w-full"
-                  height="740"
-                  allow="encrypted-media"
-                  allowFullScreen
-                  style={{ border: "none" }}
-                />
-              </div>
-            ))}
-          </div>
+          <TikTokVideoGrid videos={videoData} />
           <div className="mt-10">
             <a
               href="https://www.tiktok.com/@infinityfencingnw"

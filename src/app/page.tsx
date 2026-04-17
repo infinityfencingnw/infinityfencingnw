@@ -2,12 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  ShieldCheck,
-  Wrench,
   Star,
   ArrowRight,
   CheckCircle2,
-  Phone,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -258,78 +255,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WHY CHOOSE US ────────────────────────────── */}
-      <section className="bg-brand-charcoal section-padding section-gap">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Image */}
-          <div className="relative h-[500px] overflow-hidden">
-            <Image
-              src="https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=900"
-              alt="Infinity Fencing NW – veteran owned fence contractor"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute bottom-6 left-6 bg-brand-amber px-6 py-4">
-              <p className="font-display font-900 text-2xl text-white uppercase leading-none">
-                Veteran
-              </p>
-              <p className="font-display font-700 text-sm text-white/80 uppercase tracking-widest">
-                Owned & Operated
-              </p>
-            </div>
-          </div>
-
-          {/* Content */}
-          <div>
-            <span className="section-label">Why Infinity Fencing NW</span>
-            <h2 className="text-5xl font-display font-900 uppercase text-brand-white mb-6">
-              Built on
-              <br />
-              Integrity
-            </h2>
-            <p className="text-brand-fog leading-relaxed mb-8">
-              We're not just installing fences — we're building trust with every
-              post we set. As a veteran-owned business, we bring discipline,
-              attention to detail, and pride in our work to every project.
-            </p>
-
-            <ul className="space-y-4 mb-10">
-              {[
-                "Wood fencing on lifetime metal posts — our signature install",
-                "Fully licensed, bonded, and insured in Washington State",
-                "Transparent pricing — no hidden fees, ever",
-                "We stand behind our work with real warranties",
-                "Local to Kitsap County — we know the terrain and codes",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-brand-fog text-sm"
-                >
-                  <CheckCircle2
-                    size={18}
-                    className="text-brand-amber mt-0.5 shrink-0"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex gap-4">
-              <Link href="/about" className="btn-primary">
-                Our Story
-              </Link>
-              <a
-                href="tel:3602001005"
-                className="btn-ghost flex items-center gap-2"
-              >
-                <Phone size={16} />
-                360.200.1005
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── SHOP TEASER ──────────────────────────────── */}
       <section className="section-padding section-gap bg-brand-white">
         <div className="max-w-7xl mx-auto">
@@ -418,27 +343,26 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Gallery grid placeholder */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-            {Array.from({ length: 8 }).map((_, i) => (
+            {[
+              { src: "/gallery/g05.jpg", span: true },
+              { src: "/gallery/g04.jpg" },
+              { src: "/gallery/g01.jpg" },
+              { src: "/gallery/g08.jpg" },
+              { src: "/gallery/g11.jpg" },
+              { src: "/gallery/g06.jpg" },
+              { src: "/gallery/g03.jpg" },
+              { src: "/gallery/g09.jpg" },
+            ].map((photo, i) => (
               <div
                 key={i}
                 className={`relative overflow-hidden bg-brand-steel aspect-square ${
-                  i === 0 ? "col-span-2 row-span-2" : ""
+                  photo.span ? "col-span-2 row-span-2" : ""
                 }`}
               >
                 <Image
-                  src={[
-                    "https://images.pexels.com/photos/5126304/pexels-photo-5126304.jpeg?auto=compress&cs=tinysrgb&w=600",
-                    "https://images.pexels.com/photos/14306688/pexels-photo-14306688.jpeg?auto=compress&cs=tinysrgb&w=600",
-                    "https://images.pexels.com/photos/2381712/pexels-photo-2381712.jpeg?auto=compress&cs=tinysrgb&w=600",
-                    "https://images.pexels.com/photos/11693890/pexels-photo-11693890.jpeg?auto=compress&cs=tinysrgb&w=600",
-                    "https://images.pexels.com/photos/9581523/pexels-photo-9581523.jpeg?auto=compress&cs=tinysrgb&w=600",
-                    "https://images.pexels.com/photos/5860835/pexels-photo-5860835.jpeg?auto=compress&cs=tinysrgb&w=600",
-                    "https://images.pexels.com/photos/951408/pexels-photo-951408.jpeg?auto=compress&cs=tinysrgb&w=600",
-                    "https://images.pexels.com/photos/48246/pexels-photo-48246.jpeg?auto=compress&cs=tinysrgb&w=600",
-                  ][i]}
-                  alt={`Fence installation project ${i + 1}`}
+                  src={photo.src}
+                  alt={`Infinity Fencing NW project ${i + 1}`}
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                 />

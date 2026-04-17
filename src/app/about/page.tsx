@@ -116,6 +116,67 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Founders */}
+      <section className="section-padding section-gap bg-brand-fog/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative overflow-hidden">
+            <Image
+              src="/founders.jpg"
+              alt="Kelly and Tony – Founders of Infinity Fencing NW"
+              width={900}
+              height={1200}
+              className="w-full object-cover"
+            />
+            {/* Caption bar */}
+            <div className="absolute bottom-0 left-0 right-0 bg-brand-black/80 px-6 py-4 flex justify-between items-end">
+              <div>
+                <p className="font-display font-900 text-lg text-white uppercase leading-none">Kelly</p>
+                <p className="font-mono text-xs text-brand-amber uppercase tracking-widest mt-0.5">Co-Founder · Creative Director</p>
+              </div>
+              <div className="text-right">
+                <p className="font-display font-900 text-lg text-white uppercase leading-none">Tony</p>
+                <p className="font-mono text-xs text-brand-amber uppercase tracking-widest mt-0.5">Co-Founder · Operations</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <span className="section-label">The People Behind It</span>
+            <h2 className="font-display font-900 text-5xl uppercase text-brand-black mb-6">
+              Meet Kelly<br />& Tony
+            </h2>
+            <div className="space-y-4 text-brand-iron leading-relaxed">
+              <p>
+                Kelly and Tony founded Infinity Fencing NW with a simple idea:
+                build fences the right way, treat people right, and the rest
+                takes care of itself. Turns out, that idea works pretty well.
+              </p>
+              <p>
+                Between them, they bring the full picture — creative problem-solving,
+                operational discipline, and the kind of hands-on experience that
+                only comes from actually doing the work. Every project gets their
+                personal attention, from estimate to final walkthrough.
+              </p>
+              <p>
+                They're based in Kitsap County and genuinely invested in the
+                community they serve. When they're not building fences, they're
+                probably talking about fences.
+              </p>
+            </div>
+
+            {/* Croc callout */}
+            <div className="mt-8 border-l-4 border-brand-amber pl-5 py-1">
+              <p className="text-brand-iron text-sm leading-relaxed italic">
+                Quick note: Kelly is wearing Crocs on an active job site. We
+                asked him about it. He said, and we quote, "they're comfortable."
+                Tony has not commented. We support Kelly's choices but cannot
+                endorse the footwear.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="section-padding section-gap bg-brand-charcoal">
         <div className="max-w-7xl mx-auto">

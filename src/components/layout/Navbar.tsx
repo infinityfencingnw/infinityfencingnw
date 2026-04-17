@@ -17,6 +17,7 @@ const NAV_LINKS = [
       { label: "Gates", href: "/services/gates" },
       { label: "Commercial", href: "/services/commercial" },
       { label: "Temporary Fencing", href: "/services/temporary" },
+      { label: "Disposal & Hauling", href: "/services/disposal" },
     ],
   },
   {

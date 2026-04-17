@@ -255,6 +255,52 @@ const SERVICES: Record<
     image:
       "https://images.pexels.com/photos/951408/pexels-photo-951408.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
+  disposal: {
+    title: "Disposal & Hauling",
+    metaTitle:
+      "Old Fence Removal & Junk Hauling Poulsbo WA | Infinity Fencing NW",
+    metaDescription:
+      "Old fence removal, debris hauling, and junk disposal in Poulsbo WA and Kitsap County. We clear out the old before we build the new — or handle removal on its own. Call 360.200.1005.",
+    badge: "Full-Service",
+    headline: "We Handle the Old Stuff Too.",
+    intro:
+      "Getting a new fence means the old one has to go — and hauling it away is more work than most people expect. We offer complete removal and disposal of old fencing, post debris, brush, and general yard waste so your project starts clean.",
+    details: [
+      "Rotted wood posts, tangled chain link, concrete footings, old panels — we've pulled it all. Our crew removes your existing fence completely, including grinding or extracting set posts where possible, and hauls everything off your property.",
+      "We also offer standalone hauling and junk removal for homeowners who want to clear out debris, old building materials, yard waste, or other bulk items. No need to rent a dumpster or make multiple trips to the transfer station — we load it and go.",
+      "All materials are disposed of responsibly through licensed Kitsap County disposal facilities. We can also separate out materials for recycling where applicable (metal posts, chain link).",
+    ],
+    bullets: [
+      "Full fence removal — all materials and debris",
+      "Post extraction or grinding (concrete footings included)",
+      "Standalone junk and bulk debris hauling",
+      "Yard waste and brush clearing",
+      "Old building material removal",
+      "Responsible disposal at licensed Kitsap County facilities",
+      "Metal and chain link recycling where possible",
+      "Available as an add-on to new installation or a standalone service",
+    ],
+    faq: [
+      {
+        q: "Can you remove my old fence before installing a new one?",
+        a: "Yes — and we recommend it. We handle complete removal as part of most new installation projects. It's included or quoted as an add-on depending on the scope of your removal.",
+      },
+      {
+        q: "Do you remove concrete post footings?",
+        a: "We do our best to extract concrete footings, and in most cases can remove or break them up. Deep commercial footings may require additional equipment — we'll let you know during the estimate.",
+      },
+      {
+        q: "Can I hire you just for hauling — without a new fence?",
+        a: "Absolutely. We offer standalone removal and hauling. If you've got old fencing, yard debris, junk, or building materials to clear out, give us a call for a quote.",
+      },
+      {
+        q: "What areas do you serve for disposal and hauling?",
+        a: "We serve Poulsbo, Bremerton, Silverdale, Kingston, Port Orchard, Bainbridge Island, and the surrounding Kitsap Peninsula.",
+      },
+    ],
+    image:
+      "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
 };
 
 export async function generateMetadata({
@@ -359,6 +405,18 @@ export default function ServicePage({
                 { "@type": "ListItem", position: 1, name: "Home", item: "https://www.infinityfencingnw.com" },
                 { "@type": "ListItem", position: 2, name: service.title, item: `https://www.infinityfencingnw.com/services/${params.slug}` },
               ],
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: service.faq.map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.a,
+                },
+              })),
             },
           ]),
         }}

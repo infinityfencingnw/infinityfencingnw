@@ -10,14 +10,16 @@ export const metadata: Metadata = {
     template: "%s | Infinity Fencing NW",
   },
   description:
-    "Veteran-owned fence contractor serving Poulsbo WA, Kitsap County & NW Washington. Wood, chain link, vinyl, and security fencing. Free estimates. Licensed & insured.",
+    "Veteran-owned fence contractor serving Poulsbo WA, Kitsap County & NW Washington. Wood, chain link, vinyl, gates, and hauling. Free estimates. Licensed & insured.",
   keywords: [
     "fence contractor Poulsbo WA",
     "fence installation Kitsap County",
     "wood fence Poulsbo Washington",
     "chain link fence installer Kitsap Peninsula",
     "vinyl fence contractor",
-    "security fencing Poulsbo WA",
+    "gate installation Poulsbo WA",
+    "fence removal disposal Kitsap County",
+    "junk hauling Poulsbo WA",
     "commercial fencing Kitsap County",
     "temporary fence rental Poulsbo WA",
     "veteran owned fence company",
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Infinity Fencing NW",
     title: "Infinity Fencing NW | Fence Installation – Poulsbo, WA",
     description:
-      "Veteran-owned fence contractor. Wood, chain link, vinyl & security fencing. Serving Poulsbo WA & Kitsap Peninsula. Free estimates.",
+      "Veteran-owned fence contractor. Wood, chain link, vinyl & gates & hauling. Serving Poulsbo WA & Kitsap Peninsula. Free estimates.",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Infinity Fencing NW | Fence Contractor Poulsbo WA",
     description:
-      "Veteran-owned fence contractor. Wood, chain link, vinyl & security fencing. Free estimates.",
+      "Veteran-owned fence contractor. Wood, chain link, vinyl & gates & hauling. Free estimates.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -85,7 +87,7 @@ export default function RootLayout({
               "@id": "https://www.infinityfencingnw.com/#business",
               name: "Infinity Fencing NW LLC",
               description:
-                "Veteran-owned fence contractor specializing in wood, chain link, vinyl, and security fencing in Poulsbo WA and the Kitsap Peninsula.",
+                "Veteran-owned fence contractor specializing in wood, chain link, vinyl, and gates & hauling in Poulsbo WA and the Kitsap Peninsula.",
               url: "https://www.infinityfencingnw.com",
               telephone: "+13602001005",
               email: "build@infinityfencingnw.com",
@@ -147,7 +149,14 @@ export default function RootLayout({
                     "@type": "Offer",
                     itemOffered: {
                       "@type": "Service",
-                      name: "Security Fencing",
+                      name: "Gate Installation",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Fence Removal & Hauling",
                     },
                   },
                 ],

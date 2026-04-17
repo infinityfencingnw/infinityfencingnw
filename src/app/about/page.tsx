@@ -49,7 +49,7 @@ export default function AboutPage() {
           {/* Founders photo */}
           <div className="relative h-[620px] overflow-hidden">
             <Image
-              src="/LI9A3566.jpg"
+              src="/LI9A3566.JPG"
               alt="Kelly and Tony – Founders of Infinity Fencing NW"
               fill
               className="object-cover object-top"

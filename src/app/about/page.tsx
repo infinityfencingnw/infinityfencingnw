@@ -32,16 +32,8 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-brand-black pt-32 pb-20 section-padding overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="https://images.pexels.com/photos/9581523/pexels-photo-9581523.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt=""
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto">
+      <section className="bg-brand-black pt-32 pb-20 section-padding">
+        <div className="max-w-7xl mx-auto">
           <span className="section-label">Our Story</span>
           <h1 className="text-6xl md:text-8xl font-display font-900 uppercase text-brand-white leading-none">
             Built on
@@ -51,23 +43,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story */}
+      {/* Story + Founders */}
       <section className="section-padding section-gap bg-brand-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative h-[500px] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Founders photo */}
+          <div className="relative h-[620px] overflow-hidden">
             <Image
-              src="https://images.pexels.com/photos/14306688/pexels-photo-14306688.jpeg?auto=compress&cs=tinysrgb&w=900"
-              alt="Infinity Fencing NW – veteran owned fence contractor Poulsbo WA"
+              src="/LI9A3566.jpg"
+              alt="Kelly and Tony – Founders of Infinity Fencing NW"
               fill
-              className="object-cover"
+              className="object-cover object-top"
             />
-            <div className="absolute bottom-6 left-6 bg-brand-amber px-6 py-4">
-              <p className="font-display font-900 text-xl text-white uppercase leading-none">
-                Veteran
-              </p>
-              <p className="font-display font-600 text-xs text-white/80 uppercase tracking-widest">
-                Owned & Operated
-              </p>
+            {/* Name caption */}
+            <div className="absolute bottom-0 left-0 right-0 bg-brand-black/80 px-6 py-4 flex justify-between items-end">
+              <div>
+                <p className="font-display font-900 text-lg text-white uppercase leading-none">Kelly</p>
+                <p className="font-mono text-xs text-brand-amber uppercase tracking-widest mt-0.5">Co-Founder</p>
+              </div>
+              <div className="text-right">
+                <p className="font-display font-900 text-lg text-white uppercase leading-none">Tony</p>
+                <p className="font-mono text-xs text-brand-amber uppercase tracking-widest mt-0.5">Co-Founder</p>
+              </div>
             </div>
           </div>
 
@@ -78,10 +74,10 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-brand-iron leading-relaxed">
               <p>
-                Infinity Fencing NW was founded by a US veteran who came home
-                and decided to put that same discipline, attention to detail, and
-                commitment to doing things right into building a fencing company
-                Kitsap County could count on.
+                Infinity Fencing NW was founded by Kelly and Tony — two guys who
+                decided the right way to build a fencing company was the same way
+                you build a good fence: with the right materials, real attention
+                to detail, and no shortcuts.
               </p>
               <p>
                 We're not a franchise. We're not a national chain with a
@@ -103,6 +99,16 @@ export default function AboutPage() {
               </p>
             </div>
 
+            {/* Croc callout */}
+            <div className="mt-6 border-l-4 border-brand-amber pl-5 py-1">
+              <p className="text-brand-iron text-sm leading-relaxed italic">
+                Side note: Kelly showed up to this photo shoot in Crocs. On a
+                job site. When asked, he said "they're comfortable." Tony has
+                not commented. We support Kelly's choices but cannot officially
+                endorse the footwear.
+              </p>
+            </div>
+
             <div className="mt-8 flex gap-4">
               <Link href="/contact" className="btn-primary">
                 Get a Free Estimate
@@ -111,67 +117,6 @@ export default function AboutPage() {
               <Link href="/gallery" className="btn-secondary">
                 Our Work
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Founders */}
-      <section className="section-padding section-gap bg-brand-fog/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative overflow-hidden">
-            <Image
-              src="/LI9A3566.jpg"
-              alt="Kelly and Tony – Founders of Infinity Fencing NW"
-              width={900}
-              height={1200}
-              className="w-full object-cover"
-            />
-            {/* Caption bar */}
-            <div className="absolute bottom-0 left-0 right-0 bg-brand-black/80 px-6 py-4 flex justify-between items-end">
-              <div>
-                <p className="font-display font-900 text-lg text-white uppercase leading-none">Kelly</p>
-                <p className="font-mono text-xs text-brand-amber uppercase tracking-widest mt-0.5">Co-Founder · Creative Director</p>
-              </div>
-              <div className="text-right">
-                <p className="font-display font-900 text-lg text-white uppercase leading-none">Tony</p>
-                <p className="font-mono text-xs text-brand-amber uppercase tracking-widest mt-0.5">Co-Founder · Operations</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <span className="section-label">The People Behind It</span>
-            <h2 className="font-display font-900 text-5xl uppercase text-brand-black mb-6">
-              Meet Kelly<br />& Tony
-            </h2>
-            <div className="space-y-4 text-brand-iron leading-relaxed">
-              <p>
-                Kelly and Tony founded Infinity Fencing NW with a simple idea:
-                build fences the right way, treat people right, and the rest
-                takes care of itself. Turns out, that idea works pretty well.
-              </p>
-              <p>
-                Between them, they bring the full picture — creative problem-solving,
-                operational discipline, and the kind of hands-on experience that
-                only comes from actually doing the work. Every project gets their
-                personal attention, from estimate to final walkthrough.
-              </p>
-              <p>
-                They're based in Kitsap County and genuinely invested in the
-                community they serve. When they're not building fences, they're
-                probably talking about fences.
-              </p>
-            </div>
-
-            {/* Croc callout */}
-            <div className="mt-8 border-l-4 border-brand-amber pl-5 py-1">
-              <p className="text-brand-iron text-sm leading-relaxed italic">
-                Quick note: Kelly is wearing Crocs on an active job site. We
-                asked him about it. He said, and we quote, "they're comfortable."
-                Tony has not commented. We support Kelly's choices but cannot
-                endorse the footwear.
-              </p>
             </div>
           </div>
         </div>

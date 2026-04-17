@@ -3,11 +3,22 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, ChevronUp } from "lucide-react";
 import { clsx } from "clsx";
 
 const NAV_LINKS = [
-  { label: "Services", href: "/services" },
+  {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "Wood Fencing", href: "/services/wood-fencing" },
+      { label: "Chain Link", href: "/services/chain-link" },
+      { label: "Vinyl & PVC", href: "/services/vinyl-pvc" },
+      { label: "Gates", href: "/services/gates" },
+      { label: "Commercial", href: "/services/commercial" },
+      { label: "Temporary Fencing", href: "/services/temporary" },
+    ],
+  },
   {
     label: "Shop",
     href: "/shop",
@@ -30,9 +41,10 @@ const NAV_LINKS = [
 ];
 
 export function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [shopOpen, setShopOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -79,21 +91,21 @@ export function Navbar() {
         <ul className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) =>
             link.children ? (
-              <li key={link.label} className="relative group">
+              <li key={link.label} className="relative">
                 <button
                   className="nav-link flex items-center gap-1"
-                  onMouseEnter={() => setShopOpen(true)}
-                  onMouseLeave={() => setShopOpen(false)}
+                  onMouseEnter={() => setOpenMenu(link.label)}
+                  onMouseLeave={() => setOpenMenu(null)}
                 >
                   {link.label}
                   <ChevronDown size={14} />
                 </button>
                 <div
-                  onMouseEnter={() => setShopOpen(true)}
-                  onMouseLeave={() => setShopOpen(false)}
+                  onMouseEnter={() => setOpenMenu(link.label)}
+                  onMouseLeave={() => setOpenMenu(null)}
                   className={clsx(
-                    "absolute top-full left-0 pt-2 min-w-[200px] transition-all duration-200",
-                    shopOpen
+                    "absolute top-full left-0 pt-2 min-w-[210px] transition-all duration-200",
+                    openMenu === link.label
                       ? "opacity-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 -translate-y-2 pointer-events-none"
                   )}
@@ -104,6 +116,7 @@ export function Navbar() {
                         key={child.label}
                         href={child.href}
                         className="block px-5 py-2.5 text-sm font-body text-brand-iron hover:bg-brand-black hover:text-brand-white transition-colors"
+                        onClick={() => setOpenMenu(null)}
                       >
                         {child.label}
                       </Link>
@@ -131,10 +144,10 @@ export function Navbar() {
         {/* Mobile burger */}
         <button
           className="lg:hidden p-2 text-brand-black"
-          onClick={() => setOpen(!open)}
+          onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
@@ -142,24 +155,61 @@ export function Navbar() {
       <div
         className={clsx(
           "lg:hidden bg-brand-white border-b border-brand-fog overflow-hidden transition-all duration-300",
-          open ? "max-h-screen" : "max-h-0"
+          mobileOpen ? "max-h-screen" : "max-h-0"
         )}
       >
-        <div className="section-padding py-6 flex flex-col gap-4">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="nav-link text-base py-1 border-b border-brand-fog pb-3"
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="section-padding py-6 flex flex-col gap-1">
+          {NAV_LINKS.map((link) =>
+            link.children ? (
+              <div key={link.label}>
+                <button
+                  className="w-full flex items-center justify-between nav-link text-base py-3 border-b border-brand-fog"
+                  onClick={() =>
+                    setOpenMobileSection(
+                      openMobileSection === link.label ? null : link.label
+                    )
+                  }
+                >
+                  {link.label}
+                  {openMobileSection === link.label ? (
+                    <ChevronUp size={16} />
+                  ) : (
+                    <ChevronDown size={16} />
+                  )}
+                </button>
+                {openMobileSection === link.label && (
+                  <div className="pl-4 py-2 flex flex-col gap-1 border-b border-brand-fog">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.label}
+                        href={child.href}
+                        className="text-sm text-brand-iron py-2 hover:text-brand-amber transition-colors"
+                        onClick={() => {
+                          setMobileOpen(false);
+                          setOpenMobileSection(null);
+                        }}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="nav-link text-base py-3 border-b border-brand-fog"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <Link
             href="/contact"
-            className="btn-primary justify-center mt-2"
-            onClick={() => setOpen(false)}
+            className="btn-primary justify-center mt-4"
+            onClick={() => setMobileOpen(false)}
           >
             Free Estimate
           </Link>

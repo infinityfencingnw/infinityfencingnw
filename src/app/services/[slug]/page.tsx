@@ -300,19 +300,67 @@ export default function ServicePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: `${service.title} Installation`,
-            description: service.metaDescription,
-            provider: {
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Infinity Fencing NW LLC",
               url: "https://www.infinityfencingnw.com",
               telephone: "+13602001005",
+              email: "build@infinityfencingnw.com",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Poulsbo",
+                addressRegion: "WA",
+                addressCountry: "US",
+              },
+              areaServed: [
+                { "@type": "City", name: "Poulsbo" },
+                { "@type": "City", name: "Bremerton" },
+                { "@type": "City", name: "Silverdale" },
+                { "@type": "City", name: "Kingston" },
+                { "@type": "City", name: "Port Orchard" },
+                { "@type": "City", name: "Bainbridge Island" },
+                { "@type": "County", name: "Kitsap County" },
+              ],
+              priceRange: "$$",
+              openingHours: "Mo-Fr 07:00-18:00",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                reviewCount: "14",
+              },
             },
-            areaServed: "Kitsap County, WA",
-          }),
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: `${service.title} Installation – Poulsbo WA`,
+              description: service.metaDescription,
+              serviceType: service.title,
+              provider: {
+                "@type": "LocalBusiness",
+                name: "Infinity Fencing NW LLC",
+                telephone: "+13602001005",
+              },
+              areaServed: "Kitsap County, WA",
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: service.title,
+                itemListElement: service.bullets.map((b) => ({
+                  "@type": "Offer",
+                  itemOffered: { "@type": "Service", name: b },
+                })),
+              },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.infinityfencingnw.com" },
+                { "@type": "ListItem", position: 2, name: service.title, item: `https://www.infinityfencingnw.com/services/${params.slug}` },
+              ],
+            },
+          ]),
         }}
       />
 
@@ -323,12 +371,18 @@ export default function ServicePage({
           <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/80 to-transparent" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto">
-          <Link
-            href="/services"
-            className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-brand-silver hover:text-brand-amber transition-colors mb-8"
-          >
-            ← All Services
-          </Link>
+          <div className="flex items-center gap-4 mb-8">
+            <Link
+              href="/"
+              className="text-xs font-mono uppercase tracking-widest text-brand-silver hover:text-brand-amber transition-colors"
+            >
+              ← Home
+            </Link>
+            <span className="text-brand-silver/40 text-xs">·</span>
+            <span className="text-xs font-mono uppercase tracking-widest text-brand-fog">
+              {service.title}
+            </span>
+          </div>
           <span className="section-label">{service.badge}</span>
           <h1 className="text-6xl md:text-8xl font-display font-900 uppercase text-brand-white leading-none mb-4">
             {service.title}
